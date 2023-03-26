@@ -1,0 +1,58 @@
+{
+  "misc.qmd": {
+    "misc.html": "4e8d547b"
+  },
+  "abolition.qmd": {
+    "abolition.html": "8637c690"
+  },
+  "about.qmd": {
+    "about.html": "cfc56e67"
+  },
+  "history.qmd": {
+    "history.html": "83732e72"
+  },
+  "immigration.qmd": {
+    "immigration.html": "e4f2205e"
+  },
+  "index.qmd": {
+    "index.html": "a5bd04ab"
+  },
+  "resume.qmd": {
+    "resume.html": "6cc07df5"
+  },
+  "abolition/abolition.qmd": {
+    "abolition.html": "47cf75df"
+  },
+  "history/history.qmd": {
+    "history.html": "2adc5e39"
+  },
+  "immigration/immigration.qmd": {
+    "immigration.html": "cecf716d"
+  },
+  "misc/misc.qmd": {
+    "misc.html": "0ae9bcbc"
+  },
+  "abolition/Geography_of_Mass_Incarceration.qmd": {
+    "Geography_of_Mass_Incarceration.tex": "524130e3",
+    "Geography_of_Mass_Incarceration.html": "c1c77ed5"
+  },
+  "abolition/BailReform-JamieEsmond-FinalProject.qmd": {
+    "BailReform-JamieEsmond-FinalProject.tex": "de7e3a7a",
+    "BailReform-JamieEsmond-FinalProject.html": "8c1cea5e"
+  },
+  "history/badmen.qmd": {
+    "badmen.html": "82ce8590"
+  },
+  "history/elias.qmd": {
+    "elias.html": "1be5bc24"
+  },
+  "immigration/detention.qmd": {
+    "detention.html": "a30a6dd9"
+  },
+  "history/identity.qmd": {
+    "identity.html": "a3729a29"
+  },
+  "abolition/prisontowns.qmd": {
+    "prisontowns.html": "dbe9680c"
+  }
+}

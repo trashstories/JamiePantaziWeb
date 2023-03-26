@@ -1,0 +1,14 @@
+{
+  "hash": "c017241ad00178c3bb1fa41a7211fced",
+  "result": {
+    "markdown": "---\ntitle: \"About\"\nformat: \n  html: \n    toc: true\n    theme: custom.scss\n    fig-cap-location: \"top\"\n    tbl-cap-location: \"top\"\n    title-block-banner: true\n    title-block-banner-color: \"#744FC6\"\n    fig-align: \"center\"\n---\n\n\nJamie Pantazi Esmond is a graduate student at Georgia State University in the [Andrew Young School of Policy Studies](https://aysps.gsu.edu/) earning a Master's in Public Policy with a concentration in policy analytics. \n\nShe previously worked in the Family Detention Department of [RAICES (Refugee and Immigrant Center for Education and Legal Services](https://www.raicestexas.org/)), analyzing, organizing, and reporting on data collected from detained clients. She is passionate about research, data, and advocacy. \n\nShe has experience working with issues such as asylum law, housing insecurity, prison abolition, and peer-led mental health support. She hopes to continue her work using data to advocate for marginalized communities struggling against systemic oppression.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
