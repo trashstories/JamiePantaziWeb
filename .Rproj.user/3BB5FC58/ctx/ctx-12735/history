@@ -1,0 +1,512 @@
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+stat_bin(aes(label = ..count..), geom="text") +
+# geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .5) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"))
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text") +
+# geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .5) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"))
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "white") +
+# geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .5) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"))
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = colors) +
+# geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .5) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"))
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+# geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .5) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"))
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .5) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"))
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .5) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = "Number of Prisons",
+fill = "Type") +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+legend.position = "bottom")
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .5) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = "Number of Prisons",
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .75) +
+geom_vline(yintercept = seq(1920,2010,10), color = "white", linewidth = .75) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = "Number of Prisons",
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .75) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = .75) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = "Number of Prisons",
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .75) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = .75) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = "Number of Prisons",
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = .75) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = .75) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 1) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 1) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 1) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 1) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+# Chunk 1: setup
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(modelsummary)
+library(readr)
+library(summarytools)
+library(kableExtra)
+prisons <- read_csv("prisons.csv")
+colors <- c("#7400CC", "#CC0AA4", "#3ACC14", "#0E0ACC", "#CCAC14")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+# stat_bin(aes(y = ..count.. + 1, label = ..count..), geom="text", color = "#CC0AA4") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 1) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 1) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900, 2020, 10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(modelsummary)
+library(readr)
+library(summarytools)
+library(kableExtra)
+prisons <- read_csv("prisons.csv")
+colors <- c("#7400CC", "#CC0AA4", "#3ACC14", "#0E0ACC", "#CCAC14")
+View(prisons)
+# Chunk 1: setup
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(modelsummary)
+library(readr)
+library(summarytools)
+library(kableExtra)
+prisons <- read_csv("prisons.csv")
+colors <- c("#7400CC", "#CC0AA4", "#3ACC14", "#0E0ACC", "#CCAC14")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 1) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 1) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900,2020,10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+View(prisons)
+# Chunk 1: setup
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(modelsummary)
+library(readr)
+library(summarytools)
+library(kableExtra)
+prisons <- read_csv("prisons.csv")
+colors <- c("#7400CC", "#CC0AA4", "#3ACC14", "#0E0ACC", "#CCAC14")
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(modelsummary)
+library(readr)
+library(summarytools)
+library(kableExtra)
+prisons <- read_csv("data/prisons.csv")
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(tidyverse)
+library(modelsummary)
+library(readr)
+library(summarytools)
+library(kableExtra)
+prisons <- read_csv("prisons.csv")
+colors <- c("#7400CC", "#CC0AA4", "#3ACC14", "#0E0ACC", "#CCAC14")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 1) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 1) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900,2020,10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 1) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 2) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900,2020,10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 2) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 2) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900,2020,10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 1.5) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 2) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900,2020,10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")
+#| label: fig-timeline
+#| fig-cap: "Construction Timeline of Prisons in Georgia"
+#| fig-align: 'center'
+#| fig-width: 5.5
+prisons %>%
+ggplot(aes(Construction, fill = Facility_Type)) +
+geom_histogram(binwidth = 10, boundary = 0, color = "white") +
+geom_hline(yintercept = seq(1,16,1), color = "white", linewidth = 1.5) +
+geom_vline(xintercept = seq(1920,2010,10), color = "white", linewidth = 2) +
+scale_fill_manual(values = colors) +
+scale_x_continuous(breaks = seq(1900,2020,10)) +
+labs(x = "Year of Construction",
+y = NULL,
+fill = NULL) +
+theme_light() +
+theme(panel.border = element_blank(),
+panel.grid.major.x = element_blank(),
+panel.grid.major.y = element_blank(),
+panel.grid.minor.x = element_blank(),
+panel.grid.minor.y = element_blank(),
+text = element_text(family = "serif",
+color = "#310873"),
+axis.text = element_text(color = "#310873"),
+axis.text.y = element_blank(),
+legend.position = "bottom")

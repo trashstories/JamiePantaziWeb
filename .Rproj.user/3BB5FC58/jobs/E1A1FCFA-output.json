@@ -1,0 +1,4 @@
+[2,"\n"]
+[1,"\r\n\r\nprocessing file: prisons_mhf.qmd\r\n"]
+[1,"\r  |                                                                            \r  |                                                                      |   0%\r  |                                                                            \r  |..                                                                    |   3%\r\n  ordinary text without R code\r\n\r\n\r  |                                                                            \r  |....                                                                  |   5%\r\nlabel: setup (with options) \r\nList of 4\r\n $ echo   : logi FALSE\r\n $ include: logi FALSE\r\n $ message: logi FALSE\r\n $ warning: logi FALSE\r\n\r\n"]
+[1,"Quitting from lines 25-56 (prisons_mhf.qmd) \r\nError in gzfile(file, \"rb\") : cannot open the connection\r\nCalls: .main ... eval_with_user_handlers -> eval -> eval -> readRDS -> gzfile\r\n\r\nExecution halted\r\n"]

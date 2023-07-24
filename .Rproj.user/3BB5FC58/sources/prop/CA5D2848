@@ -6,7 +6,8 @@
     "docOutlineVisible": "1",
     "rmdVisualCollapsedChunks": "",
     "rmdVisualModeLocation": "729:0",
-    "cursorPosition": "1,0",
+    "cursorPosition": "0,0",
     "scrollLine": "0",
-    "quartoPreviewFormat": "html"
+    "quartoPreviewFormat": "html",
+    "chunk_output_type": "console"
 }

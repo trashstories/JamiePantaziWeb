@@ -18,11 +18,32 @@ website:
       - text: "Miscellaneous"
         file: misc/misc.qmd
       - resume.qmd
+      
+  sidebar:
+    - title: "Abolition"
+      style: "docked"
+      background: light
+      contents:
+        - abolition/prisons_mhf.qmd
+        - abolition/bail.qmd
+        - abolition/Bail_Reform.qmd
+        - abolition/prisontowns.qmd
+    - title: "Immigration"
+      style: "docked"
+      background: light
+      contents:
+        - immigration/detention.qmd
+    - title: "History"
+      style: "docked"
+      background: light
+      contents:
+        - history/badmen.qmd
+        - history/elias.qmd
+        - history/identity.qmd
 
 format:
   html:
     theme: custom.scss
     toc: true
 
-editor: visual
 

@@ -1,0 +1,31 @@
+{
+    "id": "F06F7C0E",
+    "path": "~/JamiePantaziWeb/history/history.qmd",
+    "project_path": "history/history.qmd",
+    "type": "quarto_markdown",
+    "hash": "1329706167",
+    "contents": "",
+    "dirty": false,
+    "created": 1690216389736.0,
+    "source_on_save": true,
+    "relative_order": 6,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "cursorPosition": "36,16",
+        "scrollLine": "23",
+        "rmdVisualModeLocation": "2:0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1690217529,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1690217529643,
+    "read_only": false,
+    "read_only_alternatives": []
+}
