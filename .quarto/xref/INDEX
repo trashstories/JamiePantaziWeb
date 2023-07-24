@@ -54,5 +54,35 @@
   },
   "abolition/prisontowns.qmd": {
     "prisontowns.html": "dbe9680c"
+  },
+  "sex.qmd": {
+    "sex.html": "c23ce2f7"
+  },
+  "andor.qmd": {
+    "andor.html": "3fe771dc"
+  },
+  "abolition/Final.qmd": {
+    "Final.html": "aec00b44"
+  },
+  "bail.qmd": {
+    "bail.html": "b2222ad3"
+  },
+  "abolition/bail.qmd": {
+    "bail.html": "0a639c7a",
+    "bail.tex": "cdbd9914"
+  },
+  "abolition/index.qmd": {
+    "index.html": "b9714bec"
+  },
+  "abolition/prisons_mhf.qmd": {
+    "prisons_mhf.tex": "1ab24d40",
+    "prisons_mhf.html": "25e782dc"
+  },
+  "abolition/Bail_Reform.qmd": {
+    "Bail_Reform.tex": "9f84dcd7",
+    "Bail_Reform.html": "9e6881da"
+  },
+  "badmenbib.qmd": {
+    "badmenbib.html": "1b313c9c"
   }
 }

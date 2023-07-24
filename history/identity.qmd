@@ -4,6 +4,8 @@ subtitle: "An Analysis of Indigenous Resilience in Mexico"
 author: "Jamie Pantazi Esmond"
 date: "December 5, 2017"
 date-format: "long"
+bibliography: identity.bib
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-note-bibliography.csl"
 format: 
   html: 
     toc: true
@@ -36,7 +38,15 @@ To further examine that imagery, the scene after Topiltzin’s capture, when he 
 Although, in the film, Topiltzin is portrayed with autonomy over his actions and beliefs, when he sacrifices himself with the Virgin Mary and creates a new religious identity, the message is clear that the old way is gone, and the new, synthesized way is born. This plays to the national narrative of the formation of the Mexican state and discounts the descendants of Nahuatl and Mixtec people who continue to identify with their Indigenous culture and tradition. Guillermo Bonfil Batalla calls this the Mèxico Profundo, describing those living in Mexico but outside the national narrative which he calls “the imaginary Mexico.”  Although, in modern Mexico City, blending of Indigenous and Catholic culture can be seen in the art and aesthetics of the common areas, such as Our Lady of Guadalupe; the mythology of its origin delegitimizes the actual history and contemporary presence of Indigenous communities.  To say that this new cultural identity came out of the merging of two old cultures is to say that the old is gone and the new has replaced it; this is a fallacy because to say that traditional Catholicism is gone would be to discount all those who are practicing Catholics outside of Mexico, but this narrative does achieve this sentiment in discounting Nahautl, Mixtec, and Maya communities who exist in Mexico but continue practice their own culture outside that narrative.
 
 Religion in Mexico is not the only representation of the synthesis of Indigenous and colonial culture. The uniqueness of modern art in Mexico compared to European and US modern art is in part due to the influence of Indigenous classical art; Diego Rivera commented that pre-colonial Indigenous art is classical, not in the Western sense, but in the purity of its creation.  When comparing pre-colonial Nahuatl and Mixtec aesthetics and Mexican modern art works such as those of Diego Rivera and Frida Kahlo, it is easy to see the influence one has on the other. The most notable similarity in the two images below (the first is from the Codex Borgia and the second is a painting by Frida Kahlo entitled The Two Fridas) is the use of a stream of blood connecting the two figures; in the first the blood is connecting the death deity to human offering a sacrifice, and the second a stream of blood is connecting the hearts of two self-portraits of the artist. In addition to the influence on modern art, popular imagery, such as sugar skulls, are a clear “tie between popular and pre-Hispanic art” that Rivera observed the difference in the way Indigenous, historians, and upper classes of citizens and tourist each responded to their display in museums: Indigenous with reverence, historians for study, and citizens for entertainment.  The popularity and consumerism surrounding these images works to consolidate Mexican identity and discount the thriving Indigenous culture which still reveres the symbolism and identity separate from the colonial narrative. 
-     
+
+<div style="float:left;">
+  [![](figures/borgia.jpg){height=425 fig-alt="An image from the Codex Borgia showing a deity and human exchanging blood."}](figures/borgia.jpg)
+</div>
+
+<div style="float:right;">
+  [![](figures/frida.jpg){height=425 fig-alt="ADD ALT TEXT!"}](figures/frida.jpg)
+</div>
+
 Although, colonialism and Catholicism did conquer Mesoamerica legally in the long run, because of the resistance and strength of Nahuatl and Mixtec people and their beliefs, the conquest was never complete and never could be; Indigenous resistance – culturally, aesthetically, and religiously – influenced the nation narrative while also maintaining autonomy outside of that narrative. The strength of will and faith is an almost impossible thing to conquer, even if the land and the physical materials are; this resistance has been ongoing and persists through the 21st century.
 
 Colonial resistance in Mixtec regions began with the initial contact with the Spanish and retained much of their land holdings for nearly a century through both physical resistance and within the Spanish courts.  This resistance has not ceased in the five hundred years since the massacre depicted in the opening scene of La Otra Conquista and since the early 1990s the indigenous movements have still been calling for “the redefinition of the Mexican nation as a multi-ethnic – legally, socially, and politically – and guarantees for indigenous self-determination” including autonomy, the San Andrès Peace Accords on Indigenous Rights and Culture, and “redefinition of the relationship between Indian peoples and the Mexican state.”   
