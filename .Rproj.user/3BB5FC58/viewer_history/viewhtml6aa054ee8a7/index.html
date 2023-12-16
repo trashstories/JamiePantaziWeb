@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="lib/kePrint-0.0.1/kePrint.js"></script>
+<link href="lib/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+</head>
+<body>
+<table style="NAborder-bottom: 0;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> Mean </th>
+   <th style="text-align:center;"> Median </th>
+   <th style="text-align:center;"> Std.Dev </th>
+   <th style="text-align:center;"> Min </th>
+   <th style="text-align:center;"> Max </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;width: 20em; "> Miles to Mental Health Facility* </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 1.8 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4.5em; "> 0.8 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 3.0 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 0.0 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 33.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20em; "> Travel Time to Mental Health Facility </td>
+   <td style="text-align:center;width: 3.5em; "> 9 min </td>
+   <td style="text-align:center;width: 4.5em; "> 7 min </td>
+   <td style="text-align:center;width: 3.5em; "> 7 min </td>
+   <td style="text-align:center;width: 3.5em; "> 0 min </td>
+   <td style="text-align:center;width: 4em; "> 76 min </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;width: 20em; "> Driving Miles to Mental Health Facility </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 4.4 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4.5em; "> 2.7 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 5.4 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 0.1 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 63.2 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20em; "> Miles to Inpatient Facility* </td>
+   <td style="text-align:center;width: 3.5em; "> 6.6 </td>
+   <td style="text-align:center;width: 4.5em; "> 5.1 </td>
+   <td style="text-align:center;width: 3.5em; "> 6.1 </td>
+   <td style="text-align:center;width: 3.5em; "> 0.0 </td>
+   <td style="text-align:center;width: 4em; "> 37.7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;width: 20em; "> Travel Time to Inpatient Facility </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 19 min </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4.5em; "> 17 min </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 12 min </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 2 min </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 92 min </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20em; "> Driving Miles to Inpatient Facility </td>
+   <td style="text-align:center;width: 3.5em; "> 11.2 </td>
+   <td style="text-align:center;width: 4.5em; "> 9.1 </td>
+   <td style="text-align:center;width: 3.5em; "> 9.6 </td>
+   <td style="text-align:center;width: 3.5em; "> 0.3 </td>
+   <td style="text-align:center;width: 4em; "> 68.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;width: 20em; "> Miles to Inpatient Facility w/ Crisis Intervention* </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 10.1 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4.5em; "> 6.5 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 12.3 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 0.0 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 85.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20em; "> Travel Time to Inpatient Facility w/ Crisis Intervention </td>
+   <td style="text-align:center;width: 3.5em; "> 26 min </td>
+   <td style="text-align:center;width: 4.5em; "> 19 min </td>
+   <td style="text-align:center;width: 3.5em; "> 27 min </td>
+   <td style="text-align:center;width: 3.5em; "> 2 min </td>
+   <td style="text-align:center;width: 4em; "> 175 min </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;width: 20em; "> Driving Miles to Inpatient Facility w/ Crisis Intervention </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 17.7 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4.5em; "> 10.9 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 23.9 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 0.3 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 151.9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20em; "> Miles to Inpatient Facility accepting Walk-ins* </td>
+   <td style="text-align:center;width: 3.5em; "> 9.6 </td>
+   <td style="text-align:center;width: 4.5em; "> 5.9 </td>
+   <td style="text-align:center;width: 3.5em; "> 14.0 </td>
+   <td style="text-align:center;width: 3.5em; "> 0.0 </td>
+   <td style="text-align:center;width: 4em; "> 90.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;width: 20em; "> Travel Time to Inpatient Facility accepting Walk-ins </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 24 min </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4.5em; "> 18 min </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 26 min </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 3.5em; "> 2 min </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 161 min </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;width: 20em; "> Driving Miles to Inpatient Facility accepting Walk-ins </td>
+   <td style="text-align:center;width: 3.5em; "> 16.3 </td>
+   <td style="text-align:center;width: 4.5em; "> 10.0 </td>
+   <td style="text-align:center;width: 3.5em; "> 23.3 </td>
+   <td style="text-align:center;width: 3.5em; "> 0.3 </td>
+   <td style="text-align:center;width: 4em; "> 140.8 </td>
+  </tr>
+</tbody>
+<tfoot><tr><td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">*</span> <sup></sup> as the crow flies</td></tr></tfoot>
+</table> <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"]]}})</script><script async src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

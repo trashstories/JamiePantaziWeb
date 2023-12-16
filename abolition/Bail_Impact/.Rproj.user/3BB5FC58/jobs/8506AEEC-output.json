@@ -1,0 +1,1 @@
+[1,"Error in `mutate()`:\r\nℹ In argument: `after = ifelse(date > as.Date(\"2019-11-01\"), 1, 0)`.\r\nCaused by error in `>.default`:\r\n! comparison (>) is possible only for atomic and list types\r\nBacktrace:\r\n  1. ... %>% ...\r\n 11. base::NextMethod(.Generic)\r\nExecution halted\r\n"]

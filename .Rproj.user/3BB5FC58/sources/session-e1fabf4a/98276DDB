@@ -1,0 +1,32 @@
+{
+    "id": "98276DDB",
+    "path": "~/JamiePantaziWeb/resume.qmd",
+    "project_path": "resume.qmd",
+    "type": "quarto_markdown",
+    "hash": "2190486230",
+    "contents": "",
+    "dirty": false,
+    "created": 1702745860606.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "tempName": "Untitled1",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "17,0",
+        "scrollLine": "0",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "225:0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1702745929,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1702745929871,
+    "read_only": false,
+    "read_only_alternatives": []
+}

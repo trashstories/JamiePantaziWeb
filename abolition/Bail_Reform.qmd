@@ -20,6 +20,12 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
@@ -35,7 +41,7 @@ library(randomNames)
 
 ```
 
-\newpage
+::: {.justify}
 
 # Introduction
 
@@ -51,7 +57,11 @@ In 2023, almost half a million people were detained in jails pretrial in the US 
 
 Using a survey of adults detained due to unaffordable bail, this research aims to illustrate the true cost of pretrial detention on families and communities. The proposed research will explore economic and social impacts on individuals directly impacted by pretrial detention. Using mostly quantitative questions and options for open-ended explanations of certain answers, a more holistic assessment of the true benefit of eliminating cash bail can be determined as it pertains to those directly impacted by the criminal justice process. By investigating the impacts of pretrial detention on individuals, policymakers can better assess the true cost of pretrial detention for families impacted as more jurisdictions move away from the cash bail system.
 
+:::
+
 # Literature Review
+
+::: {.justify}
 
 The Fourteenth Amendment of the US Constitution protects liberty and equality stating, "No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws" [@FourteenthAmendmentUS1868] Cash bail systems violate this right by imprisoning individuals who have not been convicted of a crime simply for their inability to pay bail.
 
@@ -61,7 +71,11 @@ Not only is much of the previous research about child and family impacts of inca
 
 In a survey conducted by George Mason University in 2016, 40.5% of detained parents reported that being in jail has or would change the living situation for their children [@kimbrellMoneyBondProcess2016]. The impact on children, when the parent they rely on for emotional and financial support is separated from them, can be traumatic, significant, and permanent [@millerImpactParentalIncarceration2006]. The same survey also revealed that of the participants, 69.9% were employed before being detained, and of those 84.3% worried they would lose employment due to detention [@kimbrellMoneyBondProcess2016]. While this study describes pretrial detainees and their relationship with economic and family status, it lacks depth concerning the impacts of detention on employment and childcare. Most of the research on the impacts of incarceration relies largely on observational data such as crime rates, unemployment, and poverty rates [@heatonDownstreamConsequencesMisdemeanor2016; @millerImpactParentalIncarceration2006; @baughmanCostsPretrialDetention2017].
 
+:::
+
 # Concepts and Measurement
+
+::: {.justify}
 
 While there are arguably many positive outcomes that could be impacted by bail reform and the elimination of cash bail, the most important impacts may include reduced negative social and economic impact, reduction of factors that contribute to poverty, and reduced crime and harm in general. Several of these outcomes have begun to garner attention from advocates publishing data on changes after these reforms [@widraWhatDoesSuccessful2022; @heatonEffectsMisdemeanorBail2022]. Some of these impacts can be broad and difficult to measure. However, by conducting surveys with individuals directly impacted by pretrial detention, this research hopes to quantify and illustrate the benefit of allowing those charged with a crime to remain with their families, in their homes, and supported by their communities while they await trial.
 
@@ -83,23 +97,37 @@ While validity issues are inherent in survey research, the most important threat
 
 The reliability of this method is strengthened by the fact that the conditions and surroundings of the survey process are consistent. The survey will be administered at the jail where respondents are detained in private rooms designated for legal counsel; the respondents will answer the questions themselves on a tablet provided by the researcher and in the presence of the researcher. Because the respondents are under constant supervision in detention and generally deprived of contact with the outside world at the time of the survey, an interaction with someone taking an interest in their situation is likely a welcomed encounter. To ensure consistency, the researcher will only provide standardized and limited clarifying information about survey questions. Although, other unavoidable reliability threats still exist, as the environment in jail is volatile and can severely impact the disposition of respondents.
 
+:::
+
 # Methodology and Sampling
 
 ## Subjects
 
+::: {.justify}
+
 Most bail reform policies begin by limiting or eliminating bail for misdemeanor arrests. Without cash bail, judges retain the use of their discretion to remand defendants deemed a threat to the community or a flight risk. It is safe to assume that someone who is denied bail when bail is available, would not be released without bail. The focus of this study is people who are detained pretrial simply because they do not have the ability to pay bail, and who would presumably be released to await trial at home if reforms were enacted. Individuals who have been arrested for misdemeanor offenses, have not been denied bail, and are detained pretrial will be the subject of this research. Once the sample of respondents is selected, the organization will contact the facility with the list of individuals to be surveyed according to the previously established procedure for visitation. The scope of this study will be people detained in a single county jail over the course of four weeks. 
+
+:::
 
 ## Design
 
+::: {.justify}
+
 While survey research has its inherent weaknesses due to the nature of self-reported data, to understand and attempt to measure the emotional and social impacts of pretrial detention, it can be a useful tool to capture a more complete assessment of the unseen costs of these policies. By asking people directly impacted by the bail system quantitative questions about the level of impact on their families, and following up with the opportunity for respondents to expand on their answers in open-ended quantitative questions about the specific struggles their families are facing while they are detained. Though parents can only answer these questions to the best of their knowledge about how their families are impacted, it would be nearly impossible and unethical to ask children themselves since being separated from a parent or caregiver can already be a tumultuous and traumatic event for a child. The results of these responses can be compared to existing statistics about student performance and high-risk behavior in areas with high arrest rates, but these statistics would be generalized to the community and not the specific individuals and their families.
 
+:::
+
 ## Measures
+
+::: {.justify}
 
 Measuring abstract concepts like social support, family stability, mental health, and risk of negative outcomes offers challenges including important validity concerns. Support or risks may look different to different people; these concepts can be difficult to quantify. Below are examples of the broad nature of possible questions, and these questions will be supplemented with approximately five additional specific questions about each concept. Using a five-point ordinal scale for each general question and the additional specific questions, a composite of the specific questions can be used alongside the self-reported value of the general questions. By comparing the answers to both specific and general questions, the validity of each is strengthened if they are consistent.
 
 Among the data collected, the variables hypothesized to have the most significant relationship with family outcomes are parental status, level of involvement, and the number of dependents; employment status or change in employment status; and the length of detention in days. Using regression analysis with these control variables should help to isolate the impact of detention on the well-being of children impacted by this system. Though the level of parental involvement cannot be asked outright, due to certain bias in the responses, by asking a variety of questions about the type of support, activities, and living situations regarding their children, a composite score from one to ten can be calculated to represent the level of involvement.
 
 For example, to assess social support, additional questions about who is providing care and support to dependents while they are detained. The supplemental questions will be ordinal- or dummy-level variables, and some may be contingent on previous answers. The level of involvement indicated will provide a weight for some of the responses to reflect the expected amount of impact. For example, if the parent’s involvement is high (i.e., single parent without child support) questions may be weighted for higher representation. On the other hand, the responses from minimally involved or absent parents (i.e., parents with children in another state) will be weighted less. To further account for the validity of these subjective topics, each section of questions will conclude with an open-ended question about the topic for respondents to provide additional information and context.
+
+:::
 
 > ### Sample Questions
 >
@@ -123,47 +151,83 @@ For example, to assess social support, additional questions about who is providi
 >     -   If they are young, does your absence increase their exposure to unknown influences (different school, foster care, etc.)?
 >     -   If they are older, does your absence decrease supervision, guidance, or saftey for your child(ren)?
 
+::: {.justify}
+
 An additional issue exists concerning the nature of the respondents' social construction, and their awareness of the negative light in which detained people are viewed, regardless of their lack of a guilty conviction. Detained respondents know that the general public assumes they are guilty and would rather not think of them as people with families and lives outside of this unfortunate situation. This reality can lead to *self-advocacy bias* in responses. Respondents may want to appear more sympathetic by inflating or even lying outright about their involvement or expected impact. Unfortunately, there is no way to ethically avoid this altogether, but the strategy of asking specific follow-up questions and open-ended questions will hopefully reduce this possibility and help identify fraudulent responses.
+
+:::
 
 ## Procedure
 
+::: {.justify}
+
 This research project consists of the following six stages: a) obtaining approval from the Institutional Review Board (IRB), b) designing and testing the survey, c) obtaining a sampling frame and determining the appropriate sample size, d) collecting data via supervised self-administered surveys, e) analyzing the data, and f) distribution of the results.
+
+:::
 
 ### a) Approval
 
+::: {.justify}
+
 Survey research has less potential for harm to participants than more invasive methods might but considering the vulnerability of the subjects in this study, extra care must be taken to ensure their identities remain anonymous. While it would be useful from a data collection perspective to request personal information about respondents in order to follow up with them after their case is concluded to determine the long-term implications of pretrial detention, that approach would raise additional ethical and security concerns about the data that can be avoided by allowing respondents to remain anonymous.
+
+:::
 
 ### b) Survey Design
 
+::: {.justify}
+
 While the main topics and variables have been determined, the exact wording and format of the survey will need to be designed and tested. Due to the sensitive nature of some of the topics of interest, it is important to include reviews and feedback from people who have direct experience with the criminal justice system. This includes people who have been detained themselves, family members of detained or formerly detained people, and individuals who participate in the process (judges, prosecutors, corrections officers, court clerks, etc.).
 
+:::
+
 ### c) Sampling
+
+::: {.justify}
 
 Since the population of a county jail has continuous turnover, the sampling frame would need to be determined each day the survey is administered. Over the four-week period, one weekday (Monday - Thursday) and one weekend day (Friday - Sunday) will be chosen at random to select the survey dates. On the scheduled days, a list of individuals detained on misdemeanor charges will be obtained from the jail, and anyone who has been denied bail will be removed. From the final list, a sample will be stratified by the type and number of misdemeanor charges. The types and number of charges against individuals detained pretrial may vary greatly; some may be as innocuous as a public intoxication charge or even loitering, while others may involve violence or a large number of various criminal charges. Stratification ensures representation among varying severity and types of alleged criminal activity.
 
 With a goal of completing approximately thirty surveys each day over eight different visits, the complete sample should contain around 240 responses. Once the collection day sample list is determined, the list of individuals will be sent to the facility in accordance with the predetermined visitation policy. Non-response is an issue that may be limited by the nature of detention; there are no prior commitments that could take priority for potential respondents, so there is an expectation for a high response rate. In the case that an individual selected does not wish to participate, an additional random selection from the strata from which they were drawn can be re-drawn to maintain the final sample size.
 
+:::
+
 ### d) Data Collection
+
+::: {.justify}
 
 The survey will be administered by one of two researchers, each with a goal of fifteen surveys per visit. Because of security and the bureaucratic nature of correctional facilities, delays and other obstacles are expected. Each survey should take about 15-20 minutes to complete. However, because these types of facilities are not known for efficiency, to reasonably meet a goal of fifteen surveys for each researcher, the amount of time for each response has been doubled.
 
 Detention facilities are equipped with small private rooms for detained individuals to meet with legal counsel and other advocates while detained. Access to these rooms can be acquired through connections and agreements between the organization and the facility. Each researcher will use a tablet with a digital version of the survey. Since the tablet must remain in the room, the survey will be answered by the respondent, but the research will be present for the duration. In a situation where the respondent has clarifying questions about the survey, the researcher will be able to clarify specific things according to a predetermined script.
 
+:::
+
 ### e) Analysis
+
+::: {.justify}
 
 Once the data has been collected, it will need to be cleaned and analyzed. Because the surveys were administered digitally, the responses will be automatically uploaded. Due to the validity issues discussed earlier, the data will be thoroughly examined to identify possible fraudulent answers. Answers that are inconsistent or very extreme and lack qualitative explanations in open-ended questions may be discarded. After careful cleaning and assessment, the data will be analyzed through multiple regression analysis including a variety of control variables to isolate the relationship between different individual characteristics and circumstances and the outcome variables identified.
 
+:::
+
 ### f) Distribution
+
+::: {.justify}
 
 A final, simple report of the findings will be prepared along with several tables and visualizations of the result for publication through the organization and for distribution to policymakers considering reforms to the current bail system, both in this locality and others who are considering changes.
 
+:::
+
 # Conclusion
+
+::: {.justify}
 
 Anytime nuanced, abstract concepts are studied and quantified, there will always be threats to validity. For as long as concepts like well-being and stability have been studied, researchers and decision-makers have debated how well a measure captures the essence of the concept under scrutiny. Social desirability bias and self-advocacy bias inherent in survey methods, especially for groups who have a negative social construction, can further distort the results; however, the variety of questions and supplemental open-ended responses hope to reduce threats to validity by measuring concepts with multiple methods for comparison. Additionally, key survey questions are based on perceived or expected impacts since further ethical considerations exist regarding the observation of minors who are directly impacted by pretrial detention.
 
 Since this survey would be distributed in only one county jail for the purpose of this study, the results may not be generalizable to other places. However, the study is designed so that it could easily be reproduced in other localities with only minor modifications for broader analysis. Since different municipalities have different policies regarding pretrial detention and cash bail, this study would only be appropriate for places where bail reform is needed and under consideration.
 
 With a design and a plan for this research in place, the next step is to apply for IRB approval and begin conversations with the facility to arrange for the survey distribution in person. Since both the IRB approval and detention facility coordination processes can be tedious, lengthy, and unpredictable, taking the initial steps should begin as soon as possible. In completing those tasks, the proposed timeline can be scheduled along with exact visit days and deadlines for survey formulations and analysis. Since the surveys will be administered digitally, the results will be immediately available. Preliminary analysis can begin as soon as data collection begins to identify early trends and adjust hypotheses if needed. 
+
+:::
 
 ```{r timeline}
 #| label: fig-timeline
@@ -204,7 +268,11 @@ timeline %>%
     
 ```
 
+::: {.justify}
+
 Since the first two tasks, obtaining IRB approval and coordinating with the facility, are subject to timelines outside of the researchers' control, they should be completed as soon as possible. IRB approval is required to move forward with the study, however, the logistics between the facility and researcher are not necessary until after the survey is designed and tested. @fig-timeline outlines the estimated timeline in weeks. Four weeks are allotted for IRB approval, but that may vary depending on a number of factors. By week six, the survey should be ready, and a schedule decided with the facility. Weeks seven through ten is when the data will be collected (approximately thirty surveys per day, twice a week). Before the collection of the data is complete, preliminary analysis can begin around week nine, and a full analysis should be complete by week twelve. The final two weeks will be spent finalizing a written report for advocates and policymakers.
+
+:::
 
 ```{r budget}
 #| label: fig-costs
@@ -256,12 +324,14 @@ costs %>%
     
 ```
 
+::: {.justify}
+
 The cost of any research endeavor must not exceed the benefit of the study. The paperless design of this study with digitally administered surveys via tablets will reduce the costs and time needed to collect and process data. The convenience of respondents having the same location at the time of the survey also conserves resources and time.
 
 The summary of anticipated expenses shown in @fig-costs illustrates the breakdown of expected costs. The costs incurred for survey design and distribution include travel to the facility, survey software or subscription, two tablets, and wages for researchers on-site. By far, labor costs exceed the costs of all other expenses. Two researchers administering surveys paid \$20 per hour for eight eight-hour days at the facility would cost `r my_dollar(costs$cost[4])` in total. All other expenses regarding data collection are expected to total less than \$250 (approximately `r my_dollar(costs$cost[1])` for travel, `r my_dollar(costs$cost[2])` for survey software, and `r my_dollar(costs$cost[3])` for tablets). An additional `r my_dollar(costs$cost[5])` in labor costs for analysis is equivalent to \$25 per hour for 80 hours of work from a data analyst. In the case of unexpected incidentals, an extra `r my_dollar(costs$cost[6])` has been allotted for any unexpected expenses. The total estimated budget for this study is `r my_dollar(costs$cost[7])`.
 
 Once the study is complete, the final report will be published online through the organization. A one-page summary and an infographic with key findings will also be distributed to key policymakers and advocates for bail reform. The infographic and other visualizations may also be shared on social media to increase public awareness and influence.
 
-\newpage
+:::
 
 # References
