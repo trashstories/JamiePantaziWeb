@@ -121,5 +121,14 @@
   },
   "abolition/Bail_Impact.qmd": {
     "Bail_Impact.html": "47babe7d"
+  },
+  "abolition/mhf_dash.Rmd": {
+    "mhf_dash.html": "b9b1fb41"
+  },
+  "andor/andor.qmd": {
+    "andor.html": "a56af064"
+  },
+  "history/badmenbib.qmd": {
+    "badmenbib.html": "138c9f99"
   }
 }
