@@ -1,0 +1,33 @@
+{
+    "id": "12B2D1B8",
+    "path": "~/MPP/2023-08 Fall/Policy Analysis/Bail_Impact/Bail_Impact.qmd",
+    "project_path": "Bail_Impact.qmd",
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1702651650617.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:231.27272033691406",
+        "cursorPosition": "0,0",
+        "scrollLine": "0",
+        "chunk_output_type": "console",
+        "quartoPreviewFormat": "html"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1702321091,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1702321091,
+    "read_only": false,
+    "read_only_alternatives": []
+}

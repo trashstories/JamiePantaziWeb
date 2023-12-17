@@ -17,7 +17,8 @@ website:
         file: history/history.qmd
       - text: "Miscellaneous"
         file: misc/misc.qmd
-      - resume.qmd
+      - text: "Resume"
+        file: resume.qmd
       
   sidebar:
     - title: "Abolition"
@@ -25,6 +26,7 @@ website:
       background: light
       contents:
         - abolition/prisons_mhf.qmd
+        - abolition/Bail_Impact.qmd
         - abolition/bail.qmd
         - abolition/Bail_Reform.qmd
         - abolition/prisontowns.qmd

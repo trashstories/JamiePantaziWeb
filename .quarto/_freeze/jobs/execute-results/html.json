@@ -1,0 +1,16 @@
+{
+  "hash": "95aaae65c66047b8f0d0bf26330eafa3",
+  "result": {
+    "markdown": "---\ntitle: \"Job Applications\"\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](jobs_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "jobs_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

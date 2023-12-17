@@ -1,0 +1,31 @@
+{
+    "id": "90014C5B",
+    "path": "~/JamiePantaziWeb/abolition/abolition.qmd",
+    "project_path": "abolition/abolition.qmd",
+    "type": "quarto_markdown",
+    "hash": "2653046867",
+    "contents": "",
+    "dirty": false,
+    "created": 1702745327804.0,
+    "source_on_save": false,
+    "relative_order": 3,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0",
+        "cursorPosition": "70,26",
+        "scrollLine": "59"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1702745340,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1702745340163,
+    "read_only": false,
+    "read_only_alternatives": []
+}

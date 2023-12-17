@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="lib/kePrint-0.0.1/kePrint.js"></script>
+<link href="lib/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+</head>
+<body>
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:center;"> Mean </th>
+   <th style="text-align:center;"> Median </th>
+   <th style="text-align:center;"> Std.Dev </th>
+   <th style="text-align:center;"> Min </th>
+   <th style="text-align:center;"> Max </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;background-color: #F4A5FA !important;"> Imprisonment Rate per 100,000 </td>
+   <td style="text-align:center;background-color: #F4A5FA !important;width: 4em; "> 307 </td>
+   <td style="text-align:center;background-color: #F4A5FA !important;width: 4em; "> 136 </td>
+   <td style="text-align:center;background-color: #F4A5FA !important;width: 4em; "> 493 </td>
+   <td style="text-align:center;background-color: #F4A5FA !important;width: 4em; "> 0 </td>
+   <td style="text-align:center;background-color: #F4A5FA !important;width: 4em; "> 3,767 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Total Population </td>
+   <td style="text-align:center;width: 4em; "> 4,248 </td>
+   <td style="text-align:center;width: 4em; "> 4,049 </td>
+   <td style="text-align:center;width: 4em; "> 1,701 </td>
+   <td style="text-align:center;width: 4em; "> 621 </td>
+   <td style="text-align:center;width: 4em; "> 15,052 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;"> Median Income </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> $92,743 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> $87,231 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> $41,756 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> $10,391 </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> $250,000 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> % Black </td>
+   <td style="text-align:center;width: 4em; "> 31.9% </td>
+   <td style="text-align:center;width: 4em; "> 19.3% </td>
+   <td style="text-align:center;width: 4em; "> 30.8% </td>
+   <td style="text-align:center;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;width: 4em; "> 99.8% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;"> % with Bachelor's Degree </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 39.9% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 37.2% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 20.7% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 1.6% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 95.5% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> % Under Poverty Level </td>
+   <td style="text-align:center;width: 4em; "> 10.0% </td>
+   <td style="text-align:center;width: 4em; "> 7.2% </td>
+   <td style="text-align:center;width: 4em; "> 9.5% </td>
+   <td style="text-align:center;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;width: 4em; "> 86.3% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;"> Unemployment Rate </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 5.4% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 4.5% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 3.9% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 31.2% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> % Renter-Occupied Housing </td>
+   <td style="text-align:center;width: 4em; "> 32.1% </td>
+   <td style="text-align:center;width: 4em; "> 25.1% </td>
+   <td style="text-align:center;width: 4em; "> 24.3% </td>
+   <td style="text-align:center;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;width: 4em; "> 100% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;"> % with Disability </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 11.7% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 10.5% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 5.7% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 0.4% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 41.8% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> % with Medicaid </td>
+   <td style="text-align:center;width: 4em; "> 14.4% </td>
+   <td style="text-align:center;width: 4em; "> 11.5% </td>
+   <td style="text-align:center;width: 4em; "> 11.1% </td>
+   <td style="text-align:center;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;width: 4em; "> 64.0% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;"> % with Medicare </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 4.2% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 3.6% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 2.9% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 23.0% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> % with No Health Insurance </td>
+   <td style="text-align:center;width: 4em; "> 6.0% </td>
+   <td style="text-align:center;width: 4em; "> 4.4% </td>
+   <td style="text-align:center;width: 4em; "> 5.5% </td>
+   <td style="text-align:center;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;width: 4em; "> 58.3% </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;background-color: #C09FF5 !important;"> % Rural </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 13.1% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 28.7% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 0.0% </td>
+   <td style="text-align:center;background-color: #C09FF5 !important;width: 4em; "> 100% </td>
+  </tr>
+</tbody>
+</table> <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"]]}})</script><script async src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

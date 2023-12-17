@@ -1,0 +1,16 @@
+{
+  "hash": "85dd7d3634b70adf9db7a6c77c1c846b",
+  "result": {
+    "markdown": "---\ntitle: \"Job Applications\"\nformat:\n  pdf:\n    knitr:\n      opts_chunk:\n        dev: \"cairo_pdf\"\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![](jobs_files/figure-pdf/unnamed-chunk-1-1.pdf)\n:::\n:::\n",
+    "supporting": [
+      "jobs_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

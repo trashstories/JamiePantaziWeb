@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,14 +19,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -40,8 +41,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,14 +75,26 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <style>
-    .quarto-title-block .quarto-title-banner {
-      color: #744FC6;
-    }
-    </style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #744FC6;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #744FC6;
+      }
+</style>
 
 
 </head>
@@ -98,50 +110,54 @@ div.csl-indent {
     <span class="navbar-title">Jamie Pantazi Esmond</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../abolition/abolition.html">
+    <a class="nav-link" href="../abolition/abolition.html" rel="" target="">
  <span class="menu-text">Abolition</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../immigration/immigration.html">
+    <a class="nav-link" href="../immigration/immigration.html" rel="" target="">
  <span class="menu-text">Immigration</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../history/history.html">
+    <a class="nav-link" href="../history/history.html" rel="" target="">
  <span class="menu-text">History</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../misc/misc.html">
+    <a class="nav-link" href="../misc/misc.html" rel="" target="">
  <span class="menu-text">Miscellaneous</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resume.html">
+    <a class="nav-link" href="../resume.html" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Elias Boudinot</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../history/elias.html">Elias Boudinot</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
@@ -149,7 +165,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Elias Boudinot</h1>
+      <h1 class="title">Elias Boudinot</h1>
             <p class="subtitle lead">Editor in Assimilation</p>
                       </div>
   </div>
@@ -177,27 +193,31 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../history/elias.html" class="sidebar-item-text sidebar-link active">Elias Boudinot</a>
+  <a href="../history/badmen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Constructing Bad Men</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../history/badmen.html" class="sidebar-item-text sidebar-link">Constructing Bad Men</a>
+  <a href="../history/elias.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Elias Boudinot</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../history/identity.html" class="sidebar-item-text sidebar-link">Indigenous Identity Outside the National Narrative</a>
+  <a href="../history/identity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Indigenous Identity Outside the National Narrative</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -278,56 +298,56 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliography</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-apessIndianNullificationUnconstitutional1835" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliography</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-apessIndianNullificationUnconstitutional1835" class="csl-entry" role="listitem">
 Apess, William. <em>Indian <span>Nullification</span> of the <span>Unconstitutional Laws</span> of <span>Massachusetts</span>, <span>Relative</span> to the <span>Marshpee Tribe</span>: Or, the <span>Pretended Riot Explained</span></em>. <span>Boston</span>: <span>Press of Jonathan Howe</span>, 1835.
 </div>
-<div id="ref-boudinotAddressWhites1826" class="csl-entry" role="doc-biblioentry">
+<div id="ref-boudinotAddressWhites1826" class="csl-entry" role="listitem">
 Boudinot, Elias. <span>“An <span>Address</span> to the <span>Whites</span>.”</span> <span>Speech delivered at First Presbyterian Church</span>, May 26, 1826.
 </div>
-<div id="ref-boudinotCherokeePhoenix1828" class="csl-entry" role="doc-biblioentry">
+<div id="ref-boudinotCherokeePhoenix1828" class="csl-entry" role="listitem">
 ———, ed. <span>“Cherokee <span>Phoenix</span>.”</span> <span>New Echota</span>, February 21, 1828–August 1, 1832.
 </div>
-<div id="ref-boudinotMissionaryHerald1821" class="csl-entry" role="doc-biblioentry">
+<div id="ref-boudinotMissionaryHerald1821" class="csl-entry" role="listitem">
 ———. <span>“Missionary <span>Herald</span>.”</span> <em>Religious Intelligencer</em>, January 8, 1821.
 </div>
-<div id="ref-CherokeePetitionProtest1835" class="csl-entry" role="doc-biblioentry">
+<div id="ref-CherokeePetitionProtest1835" class="csl-entry" role="listitem">
 <span>“Cherokee <span>Petition</span> in <span>Protest</span> of the <span>New Echota Treaty</span>.”</span> <span>Records of the U.S. Senate, 1789-2015, Records Relating to Treaties with Indian Tribes, 1789-1871</span>, 1835.
 </div>
-<div id="ref-CherokeeTreatyNew1835" class="csl-entry" role="doc-biblioentry">
+<div id="ref-CherokeeTreatyNew1835" class="csl-entry" role="listitem">
 <span>“Cherokee <span>Treaty</span> at <span>New Echota</span>, <span>Georgia</span>, <span>December</span> 29, 1835 (<span>Ratified Indian Treaty</span>).”</span> <span>General Records of the United States Government, 1778-2006, Indian Treaties, 1722-1869</span>, December 29, 1835. <a href="https://catalog.archives.gov/id/299801">https://catalog.archives.gov/id/299801</a>.
 </div>
-<div id="ref-gabrielEliasBoudinotCherokee1941" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gabrielEliasBoudinotCherokee1941" class="csl-entry" role="listitem">
 Gabriel, Ralph Henry. <em>Elias <span>Boudinot</span>, <span>Cherokee</span> and <span>His America</span></em>. <span>Norman</span>: <span>University of Oklahoma Press</span>, 1941.
 </div>
-<div id="ref-gaulMarryIndianMarriage2005" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gaulMarryIndianMarriage2005" class="csl-entry" role="listitem">
 Gaul, Theresa Strouth, ed. <em>To <span>Marry</span> an <span>Indian</span>: <span>The Marriage</span> of <span>Harriet Gold</span> and <span>Elias Boudinot</span></em>. <span>Chapel Hill</span>: <span>University of North Carolina Press</span>, 2005.
 </div>
-<div id="ref-hardinWilliamHardinGovernor1833" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hardinWilliamHardinGovernor1833" class="csl-entry" role="listitem">
 Hardin, William. Letter. <span>“William <span>Hardin</span> to <span>Governor Wilson Lumpkin</span>, <span>April</span> 13, 1833.”</span> Letter, April 13, 1833.
 </div>
-<div id="ref-MembersForeignMission1820" class="csl-entry" role="doc-biblioentry">
+<div id="ref-MembersForeignMission1820" class="csl-entry" role="listitem">
 <span>“Members of the <span>Foreign Mission School</span>.”</span> <span>Digital photocopy</span>, January 1820.
 </div>
-<div id="ref-NewEchotaState" class="csl-entry" role="doc-biblioentry">
+<div id="ref-NewEchotaState" class="csl-entry" role="listitem">
 <span>“New <span>Echota State Historic Site</span>.”</span> <span>State Parks &amp; Historic Sites</span>. Accessed March 4, 2018. <a href="http://gastateparks.org/NewEchota">http://gastateparks.org/NewEchota</a>.
 </div>
-<div id="ref-perdueCherokeeEditorWritings1983" class="csl-entry" role="doc-biblioentry">
+<div id="ref-perdueCherokeeEditorWritings1983" class="csl-entry" role="listitem">
 Perdue, Theda, ed. <em>Cherokee <span>Editor</span>: <span>The Writings</span> of <span>Elias Boudinot</span></em>. <span>Nashville</span>: <span>University of Tennessee Press</span>, 1983.
 </div>
-<div id="ref-schererNowLetHim1996" class="csl-entry" role="doc-biblioentry">
+<div id="ref-schererNowLetHim1996" class="csl-entry" role="listitem">
 Scherer, Mark R. <span>“<span>‘<span>Now Let Him Enforce It</span>’</span> <span>Exploring</span> the <span>Myth</span> of <span>Andrew Jackson</span>’s <span>Response</span> to <span>Worcester</span> v. <span>Georgia</span> (1832).”</span> <em>The Chronicles of Oklahoma</em> 74, no. 1 (1996).
 </div>
-<div id="ref-vaillHermanVaillHarriet1825" class="csl-entry" role="doc-biblioentry">
+<div id="ref-vaillHermanVaillHarriet1825" class="csl-entry" role="listitem">
 Vaill, Herman. Letter. <span>“Herman <span>Vaill</span> to <span>Harriet Gold</span>, <span>June</span> 29, 1825.”</span> Letter, June 29, 1825.
 </div>
-<div id="ref-walkerEarlyHistoryCherokee1993" class="csl-entry" role="doc-biblioentry">
+<div id="ref-walkerEarlyHistoryCherokee1993" class="csl-entry" role="listitem">
 Walker, Willard, and James Sarbaugh. <span>“The <span>Early History</span> of the <span>Cherokee Syllabary</span>.”</span> <em>Ethnohistory</em> 40, no. 1 (1993).
 </div>
-<div id="ref-williamsGamblingAwayInheritance1989" class="csl-entry" role="doc-biblioentry">
+<div id="ref-williamsGamblingAwayInheritance1989" class="csl-entry" role="listitem">
 Williams, H. David. <span>“Gambling <span>Away</span> the <span>Inheritance</span>: <span>The Cherokee Nation</span> and <span>Georgia</span>’s <span>Gold</span> and <span>Land Lotteries</span> of 1832-33.”</span> <em>The Georgia Historical Quarterly</em> 73 (1989).
 </div>
-<div id="ref-WorcesterGeorgia1832" class="csl-entry" role="doc-biblioentry">
+<div id="ref-WorcesterGeorgia1832" class="csl-entry" role="listitem">
 <a href="https://catalog.archives.gov/id/38995510">Worcester v. <span>Georgia</span></a> (January 30, 1832).
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
@@ -405,9 +425,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -472,6 +506,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

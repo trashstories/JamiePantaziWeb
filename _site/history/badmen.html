@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,14 +19,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -40,8 +41,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,14 +75,26 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <style>
-    .quarto-title-block .quarto-title-banner {
-      color: #744FC6;
-    }
-    </style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #744FC6;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #744FC6;
+      }
+</style>
 
 
 </head>
@@ -98,50 +110,54 @@ div.csl-indent {
     <span class="navbar-title">Jamie Pantazi Esmond</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../abolition/abolition.html">
+    <a class="nav-link" href="../abolition/abolition.html" rel="" target="">
  <span class="menu-text">Abolition</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../immigration/immigration.html">
+    <a class="nav-link" href="../immigration/immigration.html" rel="" target="">
  <span class="menu-text">Immigration</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../history/history.html">
+    <a class="nav-link" href="../history/history.html" rel="" target="">
  <span class="menu-text">History</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../misc/misc.html">
+    <a class="nav-link" href="../misc/misc.html" rel="" target="">
  <span class="menu-text">Miscellaneous</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resume.html">
+    <a class="nav-link" href="../resume.html" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Constructing Bad Men</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../history/badmen.html">Constructing Bad Men</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
@@ -149,7 +165,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Constructing Bad Men</h1>
+      <h1 class="title">Constructing Bad Men</h1>
             <p class="subtitle lead">Literary Myths and Protectionist Masculinity</p>
                       </div>
   </div>
@@ -177,27 +193,31 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../history/badmen.html" class="sidebar-item-text sidebar-link active">Constructing Bad Men</a>
+  <a href="../history/badmen.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Constructing Bad Men</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../history/elias.html" class="sidebar-item-text sidebar-link">Elias Boudinot</a>
+  <a href="../history/elias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Elias Boudinot</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../history/identity.html" class="sidebar-item-text sidebar-link">Indigenous Identity Outside the National Narrative</a>
+  <a href="../history/identity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Indigenous Identity Outside the National Narrative</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -238,7 +258,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="history/figures/vanderlyn.jpg"><img src="figures/vanderlyn.jpg" class="img-fluid figure-img" alt="An image of the painting by John Vanderlyn from 1804 depicting a white woman being attacked by two Indigenous men while a helpless white man in the distance fails to save her."></a></p>
-<p></p><figcaption class="figure-caption">John Vanderlyn’s <em>The Murder of Jane McCrea</em> (1804)</figcaption><p></p>
+<figcaption class="figure-caption">John Vanderlyn’s <em>The Murder of Jane McCrea</em> (1804)</figcaption>
 </figure>
 </div>
 </div>
@@ -255,7 +275,7 @@ div.csl-indent {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="history/figures/manifest.jpg"><img src="figures/manifest.jpg" class="img-fluid figure-img" alt="An image of a painting by John Gast from 1872 depicting a fair skinned woman floating above the frontier while settlers travel by horse and covered wagons below her."></a></p>
-<p></p><figcaption class="figure-caption"><em>American Progress</em> by John Gast (1872)</figcaption><p></p>
+<figcaption class="figure-caption"><em>American Progress</em> by John Gast (1872)</figcaption>
 </figure>
 </div>
 </div>
@@ -282,113 +302,113 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliography</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-cochran242001" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Bibliography</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cochran242001" class="csl-entry" role="listitem">
 <em>24</em>. <span>USA</span>: <span>20th Century Fox Television</span>, 2001–2014.
 </div>
-<div id="ref-berkholderWhiteManIndian1978" class="csl-entry" role="doc-biblioentry">
+<div id="ref-berkholderWhiteManIndian1978" class="csl-entry" role="listitem">
 Berkholder, Robert F. <em>The <span>White Man</span>’s <span>Indian</span></em>. <span>New York</span>: <span>Alfred A. Knoff, Inc.</span>, 1978.
 </div>
-<div id="ref-bleeckerHistoryMariaKittle1797" class="csl-entry" role="doc-biblioentry">
+<div id="ref-bleeckerHistoryMariaKittle1797" class="csl-entry" role="listitem">
 Bleecker, Ann Eliza. <em>The <span>History</span> of <span>Maria Kittle</span></em>. <span>Hartford</span>: <span>Elisha Babcook</span>, 1797.
 </div>
-<div id="ref-cooperLastMohicansNarrative1826" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cooperLastMohicansNarrative1826" class="csl-entry" role="listitem">
 Cooper, James Fenimore. <em>The <span>Last</span> of the <span>Mohicans</span>: <span>A Narrative</span> of 1757</em>. <span>Philadelphia</span>: <span>H.C. Carey &amp; I. Lea</span>, 1826.
 </div>
-<div id="ref-GeneraloCoxCandidate1865" class="csl-entry" role="doc-biblioentry">
+<div id="ref-GeneraloCoxCandidate1865" class="csl-entry" role="listitem">
 <em>Daily National Intelligencer</em>. <span>“Generalo <span>Cox</span>, Candidate of the <span>Republican</span> Party for <span>Governor</span> of <span>Ohio</span>, in Reply to a Committee, Writes a Striking Letter about the Problem of the Black Race.”</span> August 4, 1865.
 </div>
-<div id="ref-InsultsOutragesWomen1868" class="csl-entry" role="doc-biblioentry">
+<div id="ref-InsultsOutragesWomen1868" class="csl-entry" role="listitem">
 ———. <span>“Insults and <span>Outrages</span> Upon the <span>Women</span> of the <span>South</span>.”</span> October 6, 1868.
 </div>
-<div id="ref-NegroDevelopedRadical1868" class="csl-entry" role="doc-biblioentry">
+<div id="ref-NegroDevelopedRadical1868" class="csl-entry" role="listitem">
 ———. <span>“The <span>Negro</span> as <span>Developed</span> by <span>Radical Policy</span>.”</span> September 26, 1868.
 </div>
-<div id="ref-WesternScenery1819" class="csl-entry" role="doc-biblioentry">
+<div id="ref-WesternScenery1819" class="csl-entry" role="listitem">
 ———. <span>“Western <span>Scenery</span>.”</span> March 8, 1819.
 </div>
-<div id="ref-davisRapeRacismMyth1981" class="csl-entry" role="doc-biblioentry">
+<div id="ref-davisRapeRacismMyth1981" class="csl-entry" role="listitem">
 Davis, Angela. <span>“Rape, <span>Racism</span>, and the <span>Myth</span> of the <span>Black Rapist</span>.”</span> In <em>Women, <span>Race</span> &amp; <span>Class</span></em>. <span>New York</span>: <span>Vintage Books</span>, 1981.
 </div>
-<div id="ref-norrisDeltaForceColombian1990" class="csl-entry" role="doc-biblioentry">
+<div id="ref-norrisDeltaForceColombian1990" class="csl-entry" role="listitem">
 <em>Delta <span>Force</span> 2: <span>The Colombian Connection</span></em>. <span>Cannon Films</span>, 1990.
 </div>
-<div id="ref-dixonClansmanAmericanDrama1905" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dixonClansmanAmericanDrama1905" class="csl-entry" role="listitem">
 Dixon, Thomas. <em>The <span>Clansman</span>: <span>An American Drama</span>: <span>From His Two Famous Novels</span>: <span>The Leopards Spots</span> and the <span>Clansman</span>: <span>Presented</span> by the <span>Southern Amusement Co</span>.</em> <span>New York</span>: <span>American News</span>, 1905.
 </div>
-<div id="ref-dixonClansmanHistoricalRomance1905" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dixonClansmanHistoricalRomance1905" class="csl-entry" role="listitem">
 ———. <em>The <span>Clansman</span>: <span>An Historical Romance</span> of the <span>Ku Klux Klan</span></em>. <span>New York</span>: <span>Grosset &amp; Dunlap</span>, 1905.
 </div>
-<div id="ref-dunbar-ortizIndigenousPeoplesHistory2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-dunbar-ortizIndigenousPeoplesHistory2015" class="csl-entry" role="listitem">
 Dunbar-Ortiz, Roxanne. <em>An <span>Indigenous Peoples History</span> of the <span>United States</span></em>. <span>Boston</span>: <span>Beacon Press</span>, 2015.
 </div>
-<div id="ref-ellisSethJonesCaptives1860" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ellisSethJonesCaptives1860" class="csl-entry" role="listitem">
 Ellis, Edward Sylvester. <em>Seth <span>Jones</span>: <span>Or</span>, <span>The Captives</span> of the <span>Frontier</span></em>. <span>New York</span>: <span>Beadle and Adams</span>, 1860.
 </div>
-<div id="ref-gastAmericanProgress1872" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gastAmericanProgress1872" class="csl-entry" role="listitem">
 Gast, John. <em>American <span>Progress</span></em>. 1872. <a href="https://picturinghistory.gc.cuny.edu/john-gast-american-progress-1872/">https://picturinghistory.gc.cuny.edu/john-gast-american-progress-1872/</a>.
 </div>
-<div id="ref-godshalkVeiledVisions19062005" class="csl-entry" role="doc-biblioentry">
+<div id="ref-godshalkVeiledVisions19062005" class="csl-entry" role="listitem">
 Godshalk, David Fort. <em>Veiled <span>Visions</span> the 1906 <span>Atlanta Race Riot</span> and the <span>Reshaping</span> of <span>American Race Relations</span></em>. <span>Chapel Hill</span>: <span>University of North Carolina Press</span>, 2005.
 </div>
-<div id="ref-heymannGriffithBirthNation2008" class="csl-entry" role="doc-biblioentry">
+<div id="ref-heymannGriffithBirthNation2008" class="csl-entry" role="listitem">
 Heymann, Philip B., and Melvyn Stokes. <em>D. <span>W</span>. <span>Griffith</span>’s the <span>Birth</span> of a <span>Nation</span>: <span>A History</span> of the <span>Most Controversial Motion Picture</span> of <span>All Time</span></em>. <span>Cary</span>: <span>Oxford University Press USA - OSO</span>, 2008.
 </div>
-<div id="ref-favreauIronMan2008" class="csl-entry" role="doc-biblioentry">
+<div id="ref-favreauIronMan2008" class="csl-entry" role="listitem">
 <em>Iron <span>Man</span></em>. <span>Paramount / Marvel Studios</span>, 2008.
 </div>
-<div id="ref-lennardOldPurposeNew2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-lennardOldPurposeNew2015" class="csl-entry" role="listitem">
 Lennard, Katherine. <span>“Old <span>Purpose</span>, <span>‘<span>New Body</span>’</span>: <span>The Birth</span> of a <span>Nation</span> and <span>The Revival Of The Ku Klux Klan</span>.”</span> <em>The Journal of the Gilded Age and Progressive Era</em> 14, no. 04 (2015): 616–20.
 </div>
-<div id="ref-macdonaldShapeshiftingImagesNative2000" class="csl-entry" role="doc-biblioentry">
+<div id="ref-macdonaldShapeshiftingImagesNative2000" class="csl-entry" role="listitem">
 Macdonald, Andrew, Gina Macdonald, and MaryAnn Sheridan. <em>Shape-Shifting: <span>Images</span> of <span>Native Americans</span> in <span>Recent Popular Fiction</span></em>. <span>Westport, CT</span>: <span>Greenwood Press</span>, 2000.
 </div>
-<div id="ref-nelsonNationalManhoodCapitalist1998" class="csl-entry" role="doc-biblioentry">
+<div id="ref-nelsonNationalManhoodCapitalist1998" class="csl-entry" role="listitem">
 Nelson, Dana D. <em>National <span>Manhood</span>: <span>Capitalist Citizenship</span> and the <span>Imagined Fraternity</span> of <span>White Men</span></em>. <span>Durham</span>: <span>Duke University Press</span>, 1998.
 </div>
-<div id="ref-parsonsKlanSkepticismDenial2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-parsonsKlanSkepticismDenial2011" class="csl-entry" role="listitem">
 Parsons, Elaine Frantz. <span>“Klan <span>Skepticism</span> and <span>Denial</span> in <span>Reconstruction-Era Public Discourse</span>.”</span> <em>Journal of Southern History</em> 77, no. 1 (February 2011): 53–90.
 </div>
-<div id="ref-pilgrimCoonCaricatureAntiblack2000" class="csl-entry" role="doc-biblioentry">
+<div id="ref-pilgrimCoonCaricatureAntiblack2000" class="csl-entry" role="listitem">
 Pilgrim, David. <span>“The <span>Coon Caricature</span> - <span class="nocase">Anti-black Imagery</span> - <span>Jim Crow Museum</span>.”</span> <span>Ferris State University</span>, October 2000. <a href="https://www.ferris.edu/jimcrow/coon/">https://www.ferris.edu/jimcrow/coon/</a>.
 </div>
-<div id="ref-porterCompendiumEleventhCensus1892" class="csl-entry" role="doc-biblioentry">
+<div id="ref-porterCompendiumEleventhCensus1892" class="csl-entry" role="listitem">
 Porter, Robert P. <span>“Compendium of the <span>Eleventh Census</span>: 1890.”</span> <span>United States Census Office. 11th Census, 1890</span>, 1892.
 </div>
-<div id="ref-richardsonBlackMasculinitySouth2007" class="csl-entry" role="doc-biblioentry">
+<div id="ref-richardsonBlackMasculinitySouth2007" class="csl-entry" role="listitem">
 Richardson, Riché. <em>Black <span>Masculinity</span> and the <span>U</span>.<span>S</span>. <span>South</span>: <span>From Uncle Tom</span> to <span>Gangsta</span></em>. <span>Athens</span>: <span>University of Georgia Press</span>, 2007.
 </div>
-<div id="ref-ClansmanNotWanted1906" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ClansmanNotWanted1906" class="csl-entry" role="listitem">
 <em>The Atlanta Constitution</em>. <span>“’<span>The Clansman</span>’ <span>Not Wanted Here</span>.”</span> September 27, 1906.
 </div>
-<div id="ref-ClansmanStage1905" class="csl-entry" role="doc-biblioentry">
+<div id="ref-ClansmanStage1905" class="csl-entry" role="listitem">
 ———. <span>“’<span>The Clansman</span>’ on the <span>Stage</span>.”</span> August 13, 1905.
 </div>
-<div id="ref-HissingClansman1905" class="csl-entry" role="doc-biblioentry">
+<div id="ref-HissingClansman1905" class="csl-entry" role="listitem">
 ———. <span>“The <span>Hissing</span> of the <span>‘<span>Clansman</span>’</span>.”</span> October 22, 1905.
 </div>
-<div id="ref-TomDixonTalks1905" class="csl-entry" role="doc-biblioentry">
+<div id="ref-TomDixonTalks1905" class="csl-entry" role="listitem">
 ———. <span>“Tom <span>Dixon Talks</span> of the <span>Clansman</span>.”</span> October 29, 1905.
 </div>
-<div id="ref-Literary1863" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Literary1863" class="csl-entry" role="listitem">
 <em>The Daily Cleveland Herald</em>. <span>“Literary.”</span> December 7, 1863.
 </div>
-<div id="ref-BurningNegroMurderer1853" class="csl-entry" role="doc-biblioentry">
+<div id="ref-BurningNegroMurderer1853" class="csl-entry" role="listitem">
 <em>The Daily Scioto Gazette</em>. <span>“Burning a <span>Negro Murderer</span>.”</span> August 3, 1853.
 </div>
-<div id="ref-cameronTrueLies1994" class="csl-entry" role="doc-biblioentry">
+<div id="ref-cameronTrueLies1994" class="csl-entry" role="listitem">
 <em>True <span>Lies</span></em>. <span>Twentieth Century Fox</span>, 1994.
 </div>
-<div id="ref-urwandBlackImageWhite2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-urwandBlackImageWhite2018" class="csl-entry" role="listitem">
 Urwand, Ben. <span>“The <span>Black Image</span> on the <span>White Screen</span>: <span>Representations</span> of <span>African Americans</span> from the <span>Origins</span> of <span>Cinema</span> to <span>The Birth</span> of a <span>Nation</span>.”</span> <em>Journal of American Studies</em> 52, no. 1 (2018): 45–64.
 </div>
-<div id="ref-vanderlynMurderJaneMcCrea1804" class="csl-entry" role="doc-biblioentry">
+<div id="ref-vanderlynMurderJaneMcCrea1804" class="csl-entry" role="listitem">
 Vanderlyn, John. <em>The <span>Murder</span> of <span>Jane McCrea</span></em>. 1804. <a href="http://www.19thcenturyart-facos.com/artwork/murder-jane-mccrea">http://www.19thcenturyart-facos.com/artwork/murder-jane-mccrea</a>.
 </div>
-<div id="ref-wingoForgottenEraRace2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wingoForgottenEraRace2017" class="csl-entry" role="listitem">
 Wingo, Rebecca S. <span>“The <span>‘<span>Forgotten Era</span>’</span>: <span>Race</span> and <span>Gender</span> in <span>Ann Stephens</span>’s <span>Dime Novel Frontier</span>.”</span> <em>Frontiers: A Journal of Women Studies</em> 38, no. 3 (2017): 121–40.
 </div>
-<div id="ref-youngLogicMasculinistProtection2003" class="csl-entry" role="doc-biblioentry">
+<div id="ref-youngLogicMasculinistProtection2003" class="csl-entry" role="listitem">
 Young, Iris Marion. <span>“The <span>Logic</span> of <span>Masculinist Protection</span>: <span>Reflections</span> on the <span>Current Security State</span>.”</span> <em>Signs</em> 29, no. 1 (Autumn 2003): 1–25.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
@@ -453,9 +473,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -520,6 +554,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

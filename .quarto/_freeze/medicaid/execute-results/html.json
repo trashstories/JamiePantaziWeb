@@ -1,0 +1,14 @@
+{
+  "hash": "691debbc73d6e19f0abe35a6b11e4e00",
+  "result": {
+    "markdown": "---\ntitle: \"Untitled\"\neditor: visual\neditor_options: \n  chunk_output_type: console\n---\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nmed %>% \n  filter(rateType == \"Percentage\",\n         State != \"Puerto Rico\",\n         State != \"Dist. of Col.\") %>% \n  ggplot(aes(adjRate, Domain, fill = State)) +\n  geom_density_ridges(alpha = .5, guides = \"none\") +\n  facet_geo(~ State) +\n  theme_light() +\n  theme(legend.position = \"none\")\n\n\nmed %>% \n  filter(rateType == \"Percentage\",\n         State != \"Puerto Rico\",\n         State != \"Dist. of Col.\") %>% \n  ggplot(aes(adjRate, State, fill = State)) +\n  geom_density_ridges(alpha = .5) +\n  facet_wrap(~ Domain, ncol = 5, scales = \"free_x\") +\n  scale_y_discrete(limits = rev) +\n  theme_light() +\n  theme(legend.position = \"none\")\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

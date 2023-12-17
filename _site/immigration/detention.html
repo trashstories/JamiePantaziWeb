@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,14 +19,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -40,8 +41,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,14 +75,26 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <style>
-    .quarto-title-block .quarto-title-banner {
-      color: #744FC6;
-    }
-    </style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #744FC6;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #744FC6;
+      }
+</style>
 
 
 </head>
@@ -98,50 +110,54 @@ div.csl-indent {
     <span class="navbar-title">Jamie Pantazi Esmond</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html">
+    <a class="nav-link" href="../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html">
+    <a class="nav-link" href="../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../abolition/abolition.html">
+    <a class="nav-link" href="../abolition/abolition.html" rel="" target="">
  <span class="menu-text">Abolition</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../immigration/immigration.html">
+    <a class="nav-link" href="../immigration/immigration.html" rel="" target="">
  <span class="menu-text">Immigration</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../history/history.html">
+    <a class="nav-link" href="../history/history.html" rel="" target="">
  <span class="menu-text">History</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../misc/misc.html">
+    <a class="nav-link" href="../misc/misc.html" rel="" target="">
  <span class="menu-text">Miscellaneous</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resume.html">
+    <a class="nav-link" href="../resume.html" rel="" target="">
  <span class="menu-text">Resume</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Ending Immigrant Detention in the United States</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../immigration/detention.html">Ending Immigrant Detention in the United States</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
@@ -149,7 +165,7 @@ div.csl-indent {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title d-none d-lg-block">Ending Immigrant Detention in the United States</h1>
+      <h1 class="title">Ending Immigrant Detention in the United States</h1>
             <p class="subtitle lead">A Policy Brief</p>
                       </div>
   </div>
@@ -177,17 +193,19 @@ div.csl-indent {
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../immigration/detention.html" class="sidebar-item-text sidebar-link active">Ending Immigrant Detention in the United States</a>
+  <a href="../immigration/detention.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Ending Immigrant Detention in the United States</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -244,47 +262,47 @@ div.csl-indent {
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
-<div id="ref-detentionwatchnetworkGovernmentAlternativesDetention2022" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list">
+<div id="ref-detentionwatchnetworkGovernmentAlternativesDetention2022" class="csl-entry" role="listitem">
 Detention Watch Network. (2022a). <em>Government <span>Alternatives</span> to <span>Detention</span></em> [Text]. <span>Detention Watch Network</span>. <a href="https://www.detentionwatchnetwork.org/issues/alternatives">https://www.detentionwatchnetwork.org/issues/alternatives</a>
 </div>
-<div id="ref-detentionwatchnetworkImmigrationDetention1012022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-detentionwatchnetworkImmigrationDetention1012022" class="csl-entry" role="listitem">
 Detention Watch Network. (2022b). <em>Immigration <span>Detention</span> 101</em> [Text]. <span>Detention Watch Network</span>. <a href="https://www.detentionwatchnetwork.org/issues/detention-101">https://www.detentionwatchnetwork.org/issues/detention-101</a>
 </div>
-<div id="ref-freedomforimmigrantsAlternativesDetention2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-freedomforimmigrantsAlternativesDetention2022" class="csl-entry" role="listitem">
 Freedom for Immigrants. (2022a). <em>Alternatives to <span>Detention</span></em>. <span>Freedom for Immigrants</span>. <a href="https://www.freedomforimmigrants.org/alternatives-to-detention">https://www.freedomforimmigrants.org/alternatives-to-detention</a>
 </div>
-<div id="ref-freedomforimmigrantsNationalBondFund2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-freedomforimmigrantsNationalBondFund2022" class="csl-entry" role="listitem">
 Freedom for Immigrants. (2022b). <em>National <span>Bond Fund</span></em>. <span>Freedom for Immigrants</span>. <a href="https://www.freedomforimmigrants.org/national-bond-fund">https://www.freedomforimmigrants.org/national-bond-fund</a>
 </div>
-<div id="ref-freedomforimmigrantsProblem2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-freedomforimmigrantsProblem2022" class="csl-entry" role="listitem">
 Freedom for Immigrants. (2022c). <em>The <span>Problem</span></em>. <span>Freedom for Immigrants</span>. <a href="https://www.freedomforimmigrants.org/the-problem">https://www.freedomforimmigrants.org/the-problem</a>
 </div>
-<div id="ref-gonzalezEducationalConsequencesParental2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-gonzalezEducationalConsequencesParental2021" class="csl-entry" role="listitem">
 Gonzalez, G., &amp; Patler, C. (2021). The <span>Educational Consequences</span> of <span>Parental Immigration Detention</span>. <em>Sociological Perspectives</em>, <em>64</em>(2), 301–320. <a href="https://doi.org/10.1177/0731121420937743">https://doi.org/10.1177/0731121420937743</a>
 </div>
-<div id="ref-humanrightswatchAlternativesImmigrationDetention2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-humanrightswatchAlternativesImmigrationDetention2021" class="csl-entry" role="listitem">
 Human Rights Watch. (2021, November 3). <em>Alternatives to <span>Immigration Detention</span></em>. <span>Human Rights Watch</span>. <a href="https://www.hrw.org/news/2021/11/03/alternatives-immigration-detention">https://www.hrw.org/news/2021/11/03/alternatives-immigration-detention</a>
 </div>
-<div id="ref-hyunhyechoShadowPrisonsImmigrant2016" class="csl-entry" role="doc-biblioentry">
+<div id="ref-hyunhyechoShadowPrisonsImmigrant2016" class="csl-entry" role="listitem">
 Hyunhye Cho, E., &amp; Shah, P. (2016). <em>Shadow <span>Prisons</span>: <span>Immigrant Detention</span> in the <span>South</span></em>. <span>Southern Poverty Law Center</span>. <a href="https://www.splcenter.org/20161121/shadow-prisons-immigrant-detention-south">https://www.splcenter.org/20161121/shadow-prisons-immigrant-detention-south</a>
 </div>
-<div id="ref-patlerEconomicImpactsLongTerm2013" class="csl-entry" role="doc-biblioentry">
+<div id="ref-patlerEconomicImpactsLongTerm2013" class="csl-entry" role="listitem">
 Patler, C. (2013). <em>The <span>Economic Impacts</span> of <span>Long-Term Immigration Detention</span> in <span>Southern California</span></em>. <span>University of California, Irvine</span>. <a href="https://irle.ucla.edu/old/publications/documents/CaitlinPatlerReport_Full.pdf">https://irle.ucla.edu/old/publications/documents/CaitlinPatlerReport_Full.pdf</a>
 </div>
-<div id="ref-peelerPrayingHandSoap2021" class="csl-entry" role="doc-biblioentry">
+<div id="ref-peelerPrayingHandSoap2021" class="csl-entry" role="listitem">
 Peeler, K., Lee, C. H., Uppal, N., Hampton, K., Mishori, R., &amp; Raker, E. (2021). <em>Praying for <span>Hand Soap</span> and <span>Masks</span>: <span>Health</span> and <span>Human Rights Violations</span> in <span>U</span>.<span>S</span>. <span>Immigration Detention</span> during the <span>COVID-19 Pandemic</span></em>. <span>Physicians for Human Rights</span>. <a href="https://phr.org/our-work/resources/praying-for-hand-soap-and-masks/">https://phr.org/our-work/resources/praying-for-hand-soap-and-masks/</a>
 </div>
-<div id="ref-raicesBlackImmigrantLives2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-raicesBlackImmigrantLives2020" class="csl-entry" role="listitem">
 RAICES. (2020). <em>Black <span>Immigrant Lives</span> are <span>Under Attack</span></em>. <span>RAICES</span>. <a href="https://www.raicestexas.org/2020/07/22/black-immigrant-lives-are-under-attack/">https://www.raicestexas.org/2020/07/22/black-immigrant-lives-are-under-attack/</a>
 </div>
-<div id="ref-raicesAnkleBraceletsAre2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-raicesAnkleBraceletsAre2022" class="csl-entry" role="listitem">
 RAICES. (2022). <em>Ankle <span>Bracelets</span> are not a <span>Humane Alternative</span> to <span>Detention</span></em>. <span>RAICES</span>. <a href="https://www.raicestexas.org/2022/03/16/ankle-bracelets-are-not-a-humane-alternative-to-detention/">https://www.raicestexas.org/2022/03/16/ankle-bracelets-are-not-a-humane-alternative-to-detention/</a>
 </div>
-<div id="ref-secorBetterWayCommunityBased2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-secorBetterWayCommunityBased2019" class="csl-entry" role="listitem">
 Secor, D., Altman, H., &amp; Tidwell Cullen, T. (2019). <em>A <span>Better Way</span>: <span>Community-Based Programming</span> as an <span>Alternative</span> to <span>Immigrant Incarceration</span></em>. <span>National Immigrant Justice Center</span>. <a href="https://immigrantjustice.org/research-items/report-better-way-community-based-programming-alternative-immigrant-incarceration">https://immigrantjustice.org/research-items/report-better-way-community-based-programming-alternative-immigrant-incarceration</a>
 </div>
-<div id="ref-usimmigrationandcustomsenforcementDetaineeDeathReporting2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-usimmigrationandcustomsenforcementDetaineeDeathReporting2022" class="csl-entry" role="listitem">
 US Immigration and Customs Enforcement. (2022). <em>Detainee <span>Death Reporting</span> | <span>ICE</span></em>. <a href="https://www.ice.gov/detain/detainee-death-reporting">https://www.ice.gov/detain/detainee-death-reporting</a>
 </div>
 </div></section></div></main> <!-- /main -->
@@ -315,9 +333,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -382,6 +414,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

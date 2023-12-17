@@ -84,5 +84,51 @@
   },
   "badmenbib.qmd": {
     "badmenbib.html": "1b313c9c"
+  },
+  "Web/1/abolition/BailReform-JamieEsmond-FinalProject.qmd": {
+    "BailReform-JamieEsmond-FinalProject.html": "2f3720ff"
+  },
+  "feelings.qmd": {
+    "feelings.html": "c111be7d"
+  },
+  "jobs.qmd": {
+    "jobs.html": "baf1651c",
+    "jobs.tex": "7822a606"
+  },
+  "mhf_dash.Rmd": {
+    "mhf_dash.html": "0010426b"
+  },
+  "models.qmd": {
+    "models.html": "895c8d5e"
+  },
+  "etsy.qmd": {
+    "etsy.html": "69115f6c"
+  },
+  "medicaid.qmd": {
+    "medicaid.html": "bd55378f"
+  },
+  "Bail_Impact.qmd": {
+    "Bail_Impact.html": "09d3b5bc"
+  },
+  "Bail_Reform.qmd": {
+    "Bail_Reform.html": "bcdf3cd7"
+  },
+  "prisons_mhf.qmd": {
+    "prisons_mhf.html": "a5b7b8a8"
+  },
+  "prisontowns.qmd": {
+    "prisontowns.html": "f1c26441"
+  },
+  "abolition/Bail_Impact.qmd": {
+    "Bail_Impact.html": "47babe7d"
+  },
+  "abolition/mhf_dash.Rmd": {
+    "mhf_dash.html": "b9b1fb41"
+  },
+  "andor/andor.qmd": {
+    "andor.html": "a56af064"
+  },
+  "history/badmenbib.qmd": {
+    "badmenbib.html": "138c9f99"
   }
 }

@@ -1,0 +1,509 @@
+---
+title: "Pleading Change"
+subtitle: "Unraveling the Impact of Bail Reform on Guilty Pleas in Harris County"
+author: "Jamie Pantazi Esmond"
+date: "today"
+date-format: "long"
+bibliography: Bail_Reform.bib
+csl: "https://raw.githubusercontent.com/citation-style-language/styles/master/apa.csl"
+lof: true
+lot: true
+format: 
+  html: 
+    toc: true
+    theme: custom.scss
+    fig-cap-location: "top"
+    tbl-cap-location: "top"
+    title-block-banner: true
+    title-block-banner-color: "#744FC6"
+    fig-align: "center"
+  pdf: 
+    toc: true
+    latex_engine: xelatex
+    dev: cairo_pdf
+    mainfont: "Cambria"
+    fig-cap-location: "top"
+    code-line-numbers: true
+    fig-align: "center"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, echo = FALSE, include = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+library(tidyverse)
+library(scales)
+library(extrafont)
+library(modelsummary)
+library(broom.mixed)
+library(udpipe)
+library(gt)
+library(kableExtra)
+
+colors <- c("#7400CC", "#CC0AA4", "#0E0ACC", "#3ACC14", 
+            "#CCAC14", "#0ACCC5", "#CC1F14", "#1471CC", 
+            "#805713", "#4F008C", "#B785DD")
+
+th_bail <- theme_light() + 
+  theme(panel.grid.major = element_line(color = "#FFD1F9", 
+                                        linewidth = .75, 
+                                        linetype = "longdash"),
+        panel.grid.minor = element_line(color = "#FFD1F9", 
+                                          linewidth = .75, 
+                                          linetype = "dotted"),
+        panel.border = element_blank(),
+        axis.ticks = element_blank(),
+        axis.text = element_text(color = "#310873", 
+                                 family = "serif"),
+        axis.title = element_text(color = "#310873", 
+                                  family = "sans"),
+        plot.title = element_text(color = "#310873", 
+                                  size = 14, 
+                                  face = "bold", 
+                                  family = "sans"),
+        plot.subtitle = element_text(color = "#310873", 
+                                  size = 13, 
+                                  family = "sans"),
+        legend.text = element_text(color = "#310873", 
+                                   family = "sans"))
+
+# setwd("data/harris/")
+# files <- list.files(pattern="*.csv")
+# harris_raw <- do.call(rbind, lapply(files, fread))
+
+# saveRDS(harris_raw, "harris_raw.RDS")
+
+```
+
+```{r data}
+
+
+if (file.exists("harris_m.RDS")) {
+  harris_m <- readRDS("harris_m.RDS") 
+} else {
+
+  harris_raw <- readRDS("harris_raw.RDS")
+  
+  # Add unique identifier for each arrest
+  harris_ <- harris_raw %>%
+    mutate(id = unique_identifier(harris_raw, 
+                                  fields = c("fda", "def_nam", "def_dob")))
+  
+  # Concatenate charges and dispositions for each arrest
+  uniq <- harris_ %>%
+    group_by(id) %>%
+    summarise(n = n(),
+              bam_sum = sum(bam, na.rm = TRUE),
+              types = paste0(curr_l_d, collapse = ", "),
+              disp_all = paste0(disposition, collapse = ", "))
+  
+  harris_m <- harris_ %>%
+    inner_join(uniq, by = "id") %>% # Combine with concatenated data
+    distinct(id, .keep_all = TRUE) %>% # Remove duplicates
+    filter(!str_detect(types, "F")) %>% # Filter for only misdemeanor arrests
+    mutate(plea = ifelse(str_detect(disp_all, "PLEA"), 1, 0), # Plea dummy
+           date = ymd(fda), 
+           m_y = format(date, "%Y-%m"),
+           year = format(date, "%Y"),
+           casetime = as.Date(dispdt) - date, # Days from arrest to disposition 
+           after = ifelse(date > as.Date("2019-01-01"), 1, 0), # After dummy
+           male = ifelse(def_sex != "M", 0, 1), # Gender dummy
+           race = factor(case_when(def_rac == "W" ~ "White", 
+                                   def_rac == "B" ~ "Black",
+                                   TRUE ~ "Other"), 
+                         levels = c("White", 
+                                    "Black", 
+                                    "Other")), # Race categories
+           age = interval(as.Date(def_dob), date), # Age at arrest
+           homeless = ifelse(str_detect(def_stnam, "HOMELESS"), 
+                             1, 0), # Homeless dummy
+           disp = case_when(
+             str_detect(disp_all, "PLEA") ~ "Guilty Plea",
+             !str_detect(disp_all, "PLEA") &
+               str_detect(disp_all, "CONVICTION") ~ "Conviction (No Plea)",
+             !str_detect(disp_all, "PLEA") &
+               !str_detect(disp_all, "CONVICT") &
+               str_detect(disp_all, "PROBATION") ~ "Probation (No Plea)",
+             !str_detect(disp_all, "PLEA") &
+               !str_detect(disp_all, "CONVICT") &
+               !str_detect(disp_all, "PROBATION") &
+               str_detect(disp_all, "ACQUITTAL") ~ "Acquitted",
+             !str_detect(disp_all, "PLEA") &
+               !str_detect(disp_all, "CONVICT") &
+               !str_detect(disp_all, "PROBATION") &
+               str_detect(disp_all, "NOT GUILTY") ~ "Acquitted",
+             !str_detect(disp_all, "PLEA") &
+               !str_detect(disp_all, "CONVICT") &
+               str_detect(disp_all, "DEFERRED") ~ "Deferred",
+             !str_detect(disp_all, "PLEA") &
+               !str_detect(disp_all, "CONVICT") &
+               !str_detect(disp_all, "PROBATION") &
+               !str_detect(disp_all, "ACQUITTAL") &
+               !str_detect(disp_all, "NOT GUILTY") &
+               str_detect(disp_all, "DISM") ~ "Dismissed",
+             !str_detect(disp_all, "PLEA") &
+               !str_detect(disp_all, "CONVICT") &
+               !str_detect(disp_all, "PROBATION") &
+               !str_detect(disp_all, "ACQUITTAL") &
+               !str_detect(disp_all, "NOT GUILTY") &
+               str_detect(disp_all, "NO BILL") ~ "Dismissed",
+             !str_detect(disp_all, "PLEA") &
+               !str_detect(disp_all, "CONVICT") &
+               !str_detect(disp_all, "PROBATION") &
+               !str_detect(disp_all, "ACQUITTAL") &
+               !str_detect(disp_all, "NOT GUILTY") &
+               str_detect(disp_all, "CASE QUASHED") ~ "Dismissed",
+             TRUE ~ "Other"), # Disposition categories
+           violent = case_when(str_detect(offcat, "Sex") ~ 1,
+                               str_detect(offcat, "Violence") ~ 1,
+                               str_detect(offcat, "Assault") ~ 1,
+                               str_detect(offcat, "Child") ~ 1,
+                               str_detect(offcat, "Weapons") ~ 1,
+                               str_detect(offcat, "Arson") ~ 1,
+                               str_detect(offcat, "Kidnapping") ~ 1,
+                               TRUE ~ 0), # Violent crime dummy
+           bailcat = ifelse(!is.na(bam_notes), "Bond Denied",
+                            ifelse(bam_sum == 0, "No bail",
+                            cut(bam_sum,
+                                c(0,5000,50000,100000,
+                                  250000,1000000)))), # Cut bail into categories
+           bailcat = factor(case_when(bailcat == "1" ~ "$5,000 and Under",
+                                      bailcat == "2" ~ "$5,000-$50,000",
+                                      bailcat == "3" ~ "$50,000-$100,000",
+                                      bailcat == "4" ~ "$100,000-$250,000",
+                                      bailcat == "5" ~ "Over $250,000",
+                                      TRUE ~ bailcat), 
+                            levels = c("Bond Denied",
+                                       "No bail",
+                                       "$5,000 and Under",
+                                       "$5,000-$50,000",
+                                       "$50,000-$100,000",
+                                       "$100,000-$250,000",
+                                       "Over $250,000")), # Label bail categories
+           dism_defer = ifelse(disp == "Dismissed" | disp == "Deferred",
+                               TRUE, FALSE), # Dismissal/Deferred dummy
+           drop = ifelse(dism_defer == TRUE & 
+                           casetime <= 3,  # Drop dummy for arrests 
+                         TRUE, FALSE)) %>% # dismissed/deferred within 3 days
+    drop_na(plea, dispdt) %>%
+    select(id, date, m_y, year, dispdt, casetime, after, plea,
+           bam, bam_sum, bam_notes, bailcat, n, violent, 
+           race, age, male, homeless, def_zip,
+           disposition, disp_all, disp, dism_defer, drop)
+    
+    
+  saveRDS(harris_m, "harris_m.RDS")
+
+}
+
+# Check for unusual cases
+nobail <- harris_m %>% 
+  filter(bailcat == "No bail") %>% 
+  filter(dism_defer == FALSE,
+         drop == FALSE,
+         plea == 0) %>%
+  select(date, bam, bam_sum, disp, disp_all, casetime)
+
+
+harris <- harris_m %>% 
+  filter(drop == FALSE, 
+         bailcat != "Bond Denied") %>%
+  select(id, date, m_y, year, casetime, after, plea, bam_sum, bailcat, n, 
+         race, age, male, homeless, def_zip, violent, disp, dism_defer) 
+
+```
+
+\newpage
+
+# Introduction
+
+The last decade has seen an explosion of conversations around mass incarceration. As the prison industrial complex has grown into a massive system detaining almost 2 million people in the US in 2023 [@sawyerMassIncarcerationWhole2023].It has been well documented that people of color, especially Black men, are more likely to become involved with the carceral system in the US [@simesPunishingPlacesGeography2021; @easonMassImprisonmentRuralUrban2017; @pettitMassImprisonmentLife2004; @sharkeyStuckPlaceUrban2013]. While race and class are inextricably intertwined, class conditions that lead to imprisonment stretch beyond the urban and racial factors usually associated with crime and subjugation [@pettitMassImprisonmentLife2004; @easonMassImprisonmentRuralUrban2017]. The removal of individuals from an already struggling community only contributes to the cycle of instability that leads to crime and harm. These individuals are fathers, workers, caregivers, and other valuable members of their community; ripping them from their families not only impacts those who may have violated the law but those they leave behind who may have been financially or emotionally dependent on them [@gilmoreGoldenGulagPrisons2007].
+
+As several places have made reforms to the cash bail system, including ending the practice for many charges, the impacts of these reforms are beginning to take shape. While some opponents to these changes worry that releasing individuals charged with a crime while they await trial will cause an increase in crime, there is no evidence of a correlation with increased crime rates [@prestonCashBailReform2022]. In fact, the opposite may be true; some places where cash bail has been largely eliminated have seen lower increases in crime than the national average or even reductions in crime when most places have seen increases due to the COVID-19 pandemic [@prestonDonBlameBail2022; @covertBailReformHelps2022]. Not only is bail reform not correlated with an increase in crime, but research also suggests that increased pretrial detention is linked with higher rates of conviction and recidivism [@lowenkampHiddenCostsPretrial2022; @guptaHeavyCostsHigh2016]. It is important to assess not only whether unintentional negative impacts occur when policies are reformed, but it is also important to assess the nature and degree of positive impacts to advance the widespread adoption of policies that are good for people and equality.
+
+## Background
+
+In May 2016, a young woman filed a class action suit in the U.S. District Court for the Southern District of Texas against Harris County, Texas, and the Harris County Sheriff's Department claiming that the county's bail system violated the Equal Protection and Due Process Clauses of the Constitution. Bail amounts were set according to a predetermined schedule that did not take individual circumstances into consideration.
+
+After more than three years in the courts, in November 2019, Judge Rosenthal approved the consent decree which required Harris County to make major reforms to its bail program. Reforms included amended hearing rules and a requirement for clear and convincing evidence that an individual can pay the bail amount required for release. The decree also provided more funding for representation for all misdemeanor bail hearings and a website for arrestees to access important case information to support compliance [@DONNELLHARRISCOUNTY2019].
+
+Money bail systems have long been utilized by the criminal justice system to detain individuals arrested for a crime while they await trial. In a study published in the Stanford Law Review, researchers found that pretrial detention leads to individuals pleading guilty simply to be released, receiving longer jail sentences, and increases the likelihood of the individual committing future crimes [@heatonDownstreamConsequencesMisdemeanor2016].
+
+Bail reform, including the elimination of money bail for most misdemeanor offenses, reduces socioeconomic inequality in the justice system, increases compliance with future court dates, and does not contribute to increases in crime in the area [@widraWhatDoesSuccessful2022]. This policy certainly decreases the length of time individuals are detained, and the negative impacts of detention have been well documented. Aside from less quantifiable consequences such as job and income loss while detained, time away from children and family, and the impact and trauma of those relying on the individual for financial and emotional support, there is plenty of empirical support linking pretrial detention to higher rates of conviction [@digardJusticeDeniedHarmful2019]. Reducing the amount of time individuals spend in jail before they are ever convicted of a crime is essential to increasing equality, reducing factors that contribute to criminal activity, and overall reducing harm to a community.
+
+## Program theory and implementation
+
+The Fourteenth Amendment of the US Constitution protects liberty and equality stating, "No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws." Cash bail systems violate this right by imprisoning individuals who have not been convicted of a crime simply for their inability to pay bail.
+
+If the ultimate goal is to increase equality in the justice system while maintaining public safety, cash bail is impeding that goal. Detaining individuals because they are poor has a negative social and economic impact because it removes people from their families and their jobs. By reducing negative social and economic impacts, factors that contribute to poverty can be lessened or eliminated. A wealth of research exists to support the theory that poverty and inequality are positively correlated with increased crime [@fajnzylberInequalityViolentCrime2002; @freemanEconomicsCrime1999; @fleisherEffectIncomeDelinquency1966; @mohammedDoesPovertyLead2018]. Additionally, the issue of racial disparities in earnings is also a well-researched subject [@intratorSegregationRaceIncome2016; @akeeRaceMattersIncome2019; @liuSocialCapitalRace2017]. Thus, it follows that removing cash bail for misdemeanors would lead to more racial and economic equality, which may lead to reduced crime and reduced harm while maintaining public safety.
+
+Detaining individuals without due process is not only unconstitutional and potentially a human rights violation, it also has negative impacts on the community. According to a 2018 study, more than half of inmates in local jails were parents to children under 18, and that percentage was even higher for women [@sawyerHowDoesUnaffordable2018]. In a survey conducted by George Mason University in 2016, 40.5% of detained parents reported that being in jail has or would change the living situation for their children [@kimbrellMoneyBondProcess2016]. The impact on children, when the parent they rely on for emotional and financial support is separated from them, can be traumatic, significant, and permanent. The same survey also revealed that of the participants, 69.9% were employed before being detained, and of those 84.3% worried they would lose employment due to detention [@kimbrellMoneyBondProcess2016].
+
+Based on the theory that cash bail systems discriminate based on financial status and detention has a negative impact on communities, reforming the bail system is an optimal solution to reduce inequality, crime, and harm in general.
+
+![Impact Theory](figures/ImpactTheroy2.png)
+
+# Methods
+
+## Variables
+
+## Models and Measures
+
+### Main outcome
+
+While there are arguably many positive outcomes that could be impacted by bail reform and the elimination of cash bail, the most important outcomes may include greater equality in the justice system, reduced negative social and economic impact, reduction of factors that contribute to poverty, and reduced crime and harm in general. Several of these outcomes have begun to garner attention from advocates publishing data on changes after these reforms [@widraWhatDoesSuccessful2022; @heatonEffectsMisdemeanorBail2022]. Some of these outcomes are broad and difficult to measure, but inequality in the justice system can be measured in part by assessing disparities around racial identity and socioeconomic status in who chooses to accept a guilty plea deal and whether detained defendants are more likely to be convicted or receive longer sentences. Administrative data is available for both the bond amount and the outcome of the charges for both before and after the reform was implemented along with demographic attributes.
+
+### Measuring Increased Equality in the Justice System
+
+To measure equality in the justice system, economic and racial disparities must be considered. An obvious place to start might be with the rate of arrests, convictions, and sentencing across individuals with different economic and racial backgrounds because this could illuminate clear patterns of discrimination inherent in the system. However, the inequality on the part of law enforcement, prosecutors, judges, and laws has been well documented and reported on and does not necessarily correlate directly with the affordability of bail [@RacialDisparitiesSentencing2022; @gaseUnderstandingRacialEthnic2016; @mitchellRelationshipRaceEthnicity2004; @threadgillRacialEthnicDisparities2022].
+
+Many individuals have stated that they chose to agree to a plea deal because they could not afford bail and the alternative was to wait in jail for a court appearance [@subramanianShadowsReviewResearch2020]. If the cost of bail was no longer an obstacle, the rate of individuals accepting plea deals should decrease because innocent people would not normally agree to a guilty plea without the coercion of pretrial detention.
+
+The conviction rates for detained and released defendants are also measurable, and it is a good indicator of to what degree there is an advantage of not being detained when appearing in court [@dobbieEffectsPreTrialDetention2018; @giusDeterminantsPretrialDetention2018]. Individuals are to be presumed innocent until proven guilty, but appearing in court in a jumpsuit and shackles can give the impression of guilt even for innocent defendants. If bail reform allows people to be released from jail while they await trial, it follows that the implicit bias that leads to a higher conviction for detained defendants would be alleviated. While the rate of conviction for detained defendants may not be impacted for defendants who are not eligible for release at all, it would remove the economic barrier for many to have a chance of a fair hearing.
+
+To measure the impact of bail reform on economic disparity in the justice system, the rate of individuals agreeing to plea deals after arrest and overall changes before and after the change. While collecting information from every arrestee about their reason for accepting or rejecting a plea deal is not feasible, using public records to compare trends before and after to determine if the rate of cases ending in plea agreements changed after implementation. If the probability changes after the elimination of cash bail for misdemeanors in Harris County, but not in a comparable county without the reform, it is evidence that release from detention was a primary reason for considering a plea deal.
+
+## Hypothesis
+
+Based on the previous research and theory discussed, bail reform in Harris County should illicit a reduction in the number of guilty plea deals accepted and reduce disparity among racial and economic groups. It is also likely that the overall rate of conviction will decrease if defendants are released pretrial and are more able to seek legal counsel and retain their employment status. Even where convictions still occur, sentencing should be impacted as more defendants are able to prepare and present in court in their own clothes and with the support of their families and communities instead of in shackles and a jumpsuit with limited access to legal and emotional resources.
+
+## Identification strategy
+
+Identifying and measuring the actual impact of bail reform on equality in the justice system may be a difficult endeavor, but by using the rate of plea agreements for misdemeanors before and after the reform in Harris County and a comparable county with parallel plea agreement trends prior to implementation. As explained earlier, the assumption is that if the trends were parallel prior to the policy change, it is expected that the parallel trend would have continued without the change. Using this difference-in-difference method, the confounding factors that can not be easily measured do not obscure the impact of the new policy since it is assumed that those factors influence outcomes similarly in the treatment location (Harris County) and the control location. Using comparable counties, the public record data from each location serves as an account of a sort of "real world" experiment. In this way, the impact specifically from the changes to misdemeanor bail practices in Harris County can be isolated.
+
+If it is true that many people accept plea agreements to resolve their case quickly due to inability to pay bail, elimination of cash bail should give those charged with a misdemeanor the opportunity to fight their case outside of jail. While surly some agree to plea deals for other reasons, the number accepting plea deals purely for economic reasons should shrink by removing this part of the financial barrier. To be sure, there are many other factors contributing to racial and socioeconomic status in the justice system, from court costs and access to adequate legal counsel, not holding people hostage simply for being poor may be a good place to start. The rate of plea agreements may not capture all of the dimensions of inequality, but it may indicate an attainable goal for improvement.
+
+Though comparing Harris County with a comparable county may estimate the impact of the reform in Harris County, it may not mean that the impact is generalizable to all communities. There may be a case that it would work in the control county used for comparison, since those places have been determined as comparable with parallel trends regarding plea agreements, but other considerations must be made to make assumptions about other places. However, a detected impact in Harris County would illuminate policymakers in other places who may be considering similar reforms.
+
+# Data
+
+## Summary Statistics
+
+```{r bail, eval=FALSE}
+#| tbl-cap: "Summary of Case Outcomes"
+
+bail <- harris %>% 
+  group_by(bailcat, after, disp) %>% 
+  summarise(n = n()) %>% 
+  pivot_wider(id_cols = c(bailcat, after),
+              names_from = disp,
+              values_from = n) %>% 
+  mutate(a = ifelse(after == 0, "Before", "After"))
+
+bail %>% 
+  select(bailcat, after, a,
+         `Guilty Plea`, Dismissed, Deferred, 
+         `Probation (No Plea)`, `Conviction (No Plea)`, 
+         Acquitted, Other) %>% 
+  gt() %>% 
+  cols_label(a = html("<b>Arrest Date</b>"),
+             Acquitted = html("<b>Acquitted</b>"),
+             `Conviction (No Plea)` = html("<b>Conviction</b>"),
+             Deferred = html("<b>Deferred</b>"),
+             Dismissed = html("<b>Dismissed</b>"),
+             `Guilty Plea` = html("<b>Guilty Plea</b>"),
+             Other = html("<b>Other</b>"),
+             `Probation (No Plea)` = html("<b>Probation</b>")) %>% 
+  tab_row_group("Over $250,000", 
+                rows = c(11,12)) %>% 
+  tab_row_group("$100,000-$250,000", 
+                rows = c(9,10)) %>% 
+  tab_row_group("$50,000-$100,000", 
+                rows = c(7,8)) %>% 
+  tab_row_group("$5,000-$50,000", 
+                rows = c(5,6)) %>% 
+  tab_row_group("$5,000 and Under", 
+                rows = c(3,4)) %>% 
+  tab_row_group("No Bail", 
+                rows = c(1,2)) %>% 
+  fmt_number(decimals = 0) %>% 
+  opt_stylize(style = 6, color = "pink", 
+              add_row_striping = TRUE) %>% 
+  sub_missing(missing_text = 0)
+  
+
+high <- harris %>% 
+  filter(bailcat == "Over $250,000")
+
+```
+
+```{r sum}
+#| tbl-cap: "Summary of Guilty Plea Rates by Year"
+
+# Summary by year
+year_ <- harris %>%
+  drop_na(plea) %>% 
+  group_by(year, plea) %>% 
+  summarise(n = n()) 
+
+year_sum <- harris %>%
+  drop_na(plea) %>% 
+  group_by(year) %>% 
+  summarise(total = n()) %>% 
+  left_join(year_, by = "year", 
+            relationship = "many-to-many") %>% 
+  mutate(rate = n / total)
+
+year_sum %>% 
+  filter(plea == 1) %>% 
+  select(year, rate, total) %>% 
+  gt() %>% 
+  cols_label(year = md("**Year**"),
+             rate = md("**Rate**"),
+             total = md("**Total**")) %>% 
+  cols_align(align = "center") %>% 
+  fmt_percent(columns = rate) %>% 
+  fmt_number(columns = total, decimals = 0) %>% 
+  opt_stylize(style = 6, color = "pink", 
+              add_row_striping = TRUE)
+
+# Summary by month and year
+month_ <- harris %>%
+  drop_na(plea) %>% 
+  group_by(m_y, plea) %>% 
+  summarise(n = n()) 
+
+month_sum <- harris %>%
+  drop_na(plea) %>% 
+  group_by(m_y) %>% 
+  summarise(total = n()) %>% 
+  left_join(month_, by = "m_y", 
+            relationship = "many-to-many") %>% 
+  mutate(rate = n / total,
+         m_y = as.Date(paste0(m_y, "-01")))
+
+
+```
+
+### Scope
+
+```{r zips}
+#| label: fig-map
+#| fig-cap: "Misdemeanor Arrests in Harris County by Defendant's Zip Code" 
+#| fig-align: 'center'
+
+# Clean zipcodes for mapping
+zip <- harris %>% 
+  group_by(def_zip) %>% 
+  summarise(n = n()) %>% 
+  filter(def_zip != "00000",
+         def_zip != "0000 ",
+         def_zip != "     ",
+         def_zip != "",
+         def_zip != "99999") %>% 
+  subset(nchar(trimws(def_zip)) == 5) %>% 
+  mutate(zip_char = paste0('"', def_zip, '"'))
+
+write.csv(zip, "harris_zips.csv")
+
+knitr::include_graphics("map.png")
+
+```
+
+### Trends
+
+```{r plot_year}
+#| fig-cap: "Harris County Guilty Pleas by Year"
+
+year_sum %>% 
+  filter(plea == 1) %>% 
+  ggplot(aes(year, rate)) +
+  geom_point(size = 4, color = "#7400CC") +
+  geom_vline(xintercept = c("2020", "2017"),
+             linewidth = 1.25, 
+             color = "#CC0AA4") +
+  scale_y_continuous(labels = label_percent(),
+                     limits = c(0,1),
+                     expand = expansion(mult = .01, add = .01)) +
+  labs(x = NULL,
+       y = "Rate of Guilty Pleas",
+       title = "Harris County Guilty Pleas",
+       subtitle = "Misdemeanors 2015-2022") +
+  th_bail 
+
+```
+
+```{r plot_month}
+#| fig-cap: "Harris County Guilty Pleas by Month"
+
+month_sum %>% 
+  filter(plea == 1) %>% 
+  ggplot(aes(m_y, rate)) +
+  geom_point(size = 2,
+             color = "#0E0ACC") +
+  geom_line(aes(group = factor(plea)),
+            linewidth = 1,
+            color = "#0E0ACC") +
+  geom_vline(xintercept = c(as.Date("2019-12-01"), 
+                            as.Date("2017-2-01")),
+             linewidth = 1.25, 
+             color = "#CC0AA4") +
+  scale_x_date(breaks = date_breaks(width = "1 year"),
+               labels = date_format("%Y"),
+               expand = expansion(mult = .01, add = .01)) +
+  scale_y_continuous(labels = label_percent(),
+                     limits = c(0,1),
+                     expand = expansion(mult = .01, add = .01)) +
+  labs(x = NULL,
+       y = "Rate of Guilty Pleas",
+       title = "Harris County Guilty Pleas",
+       subtitle = "Misdemeanors 2015-2022",
+       caption = "Note: 'Other' accounts for less than 4% of all arrests.") +
+  th_bail 
+
+ggsave("harris.png", width = 7, height = 7 / 1.618)
+
+```
+
+## Analysis
+
+```{r regress}
+
+my_gof <- tribble(
+  ~raw, ~clean, ~fmt,
+  "nobs", "N", 0,
+  "r.squared", "R2", 2)
+
+notes <- c("confidence intervals in brackets",
+           "(+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001)")
+
+model <- lm(plea ~ bailcat * after, data = harris)
+m <- tidy(model, conf.int = TRUE)
+
+m_ <- modelsummary(model,
+                   coef_rename = c(
+    `bailcat$5,000 and Under` = "$5,000 and Under",
+    `bailcat$5,000-$50,000` = "$5,000-50,000",
+    `bailcat$50,000-$100,000` = "$50,000-100,000",
+    `bailcat$100,000-$250,000` = "$100,000-250,000",
+    `bailcatOver $250,000` = "Over $250,000",
+    after = "After",
+    `bailcat$5,000 and Under:after` = "After + $5,000 and Under",
+    `bailcat$5,000-$50,000:after` = "After + $5,000-50,000",
+    `bailcat$50,000-$100,000:after` = "After + $50,000-100,000",
+    `bailcat$100,000-$250,000:after` = "After + $100,000-250,000",
+    `bailcatOver $250,000:after` = "After + Over $250,000"),
+             output = "kableExtra",
+             estimate = "{estimate}{stars}",
+             statistic = "conf.int",
+             fmt =  3,
+             gof_map = my_gof) %>% 
+  row_spec(c(5,7,9,15,17,19,21), background = "#FFD1F9") %>% 
+  row_spec(13, color = "white", background = "#CC0AA4") %>% 
+  kable_classic() %>%
+  footnote(general = notes, footnote_as_chunk = TRUE)
+
+m_
+
+```
+
+# Considerations
+
+## Cost-Benefit Analysis
+
+## Alternatives
+
+# Conclusion
+
+# References

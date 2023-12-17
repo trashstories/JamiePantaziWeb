@@ -1,0 +1,31 @@
+{
+    "id": "DB94FF0E",
+    "path": "~/JamiePantaziWeb/index.qmd",
+    "project_path": "index.qmd",
+    "type": "quarto_markdown",
+    "hash": "1043820106",
+    "contents": "",
+    "dirty": false,
+    "created": 1702745087778.0,
+    "source_on_save": true,
+    "relative_order": 1,
+    "properties": {
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "source_window_id": "",
+        "Source": "Source",
+        "docOutlineVisible": "1",
+        "rmdVisualCollapsedChunks": "",
+        "rmdVisualModeLocation": "2:0",
+        "cursorPosition": "28,229",
+        "scrollLine": "17"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1702761996,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1702761996751,
+    "read_only": false,
+    "read_only_alternatives": []
+}
