@@ -3,7 +3,7 @@
     "path": "~/JamiePantaziWeb/about.qmd",
     "project_path": "about.qmd",
     "type": "quarto_markdown",
-    "hash": "1606313930",
+    "hash": "2930240822",
     "contents": "",
     "dirty": false,
     "created": 1702745093916.0,
@@ -17,15 +17,15 @@
         "docOutlineVisible": "1",
         "rmdVisualCollapsedChunks": "",
         "rmdVisualModeLocation": "2:0",
-        "cursorPosition": "37,15",
-        "scrollLine": "28"
+        "cursorPosition": "35,4",
+        "scrollLine": "31"
     },
     "folds": "",
-    "lastKnownWriteTime": 1702749000,
+    "lastKnownWriteTime": 1702841573,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1702749000613,
+    "last_content_update": 1702841573468,
     "read_only": false,
     "read_only_alternatives": []
 }

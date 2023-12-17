@@ -1,4 +1,5 @@
 ---
+title: "Research and Design by Jamie Pantazi Esmond"
 format: 
   html: 
     toc: true
@@ -6,6 +7,8 @@ format:
     fig-cap-location: "bottom"
     tbl-cap-location: "top"
     fig-align: "center"
+    title-block-banner: true
+    title-block-banner-color: "#744FC6"
     template-partials:
       - "_layouts/sidebar.html"
 ---
@@ -78,7 +81,6 @@ Welcome to my portfolio of research and graphic design. My research goals have b
 
 [Empty Promises of Prosperity](abolition/prisontowns.html): Prison Towns and Quality of Life in Rural Georgia - A Spatial Analysis (November 2023)
 
-
 </div>
 
 <br><br><br>
@@ -150,7 +152,9 @@ Welcome to my portfolio of research and graphic design. My research goals have b
 
 <br><br>
 
-# Maps
+# Design
+
+## Maps
 
 [![Click to view full report.](abolition/figures/map.png){fig-alt=""}](Bail_Impact.html)
 
@@ -158,35 +162,36 @@ Welcome to my portfolio of research and graphic design. My research goals have b
  
 [![Click to view full report.](abolition/figures/overview.png){fig-alt="A map of Georgia showing the capacity and location of prisons, color coded to indicate type of facility."}](abolition/prisontowns.html)
 
-# Dashboards
+## Dashboards
 
 [![Click to view full report.](abolition/figures/prisontowns_dashboard.png){fig-alt=""}](abolition/prisontowns.html)
 
 [![Click to view full report.](abolition/figures/mhf_dashboard.png){fig-alt=""}](abolition/prisons_mhf.html)
 
-# Original Datasets
+<!-- # Original Datasets -->
 
--  [Prisoners of a Broken System](abolition/prisons_mhf.html) 
-   -   Maryland tracts with select characteristics and **all** characteristics of nearest facilities
-       - [`MD_GIS.csv`](data/MD_GIS.csv)
-   -   Maryland tracts with select characteristics and **select** characteristics of nearest facilities
-       - [`MD_GIS_clean.csv`](data/MD_GIS_clean.csv)
-   -   Maryland facilities list with **all** characteristics
-       - [`Facilities.csv`](data/Facilities.csv)
+<!-- -  [Prisoners of a Broken System](abolition/prisons_mhf.html)  -->
+<!--    -   Maryland tracts with select characteristics and **all** characteristics of nearest facilities -->
+<!--        - [`MD_GIS.csv`](data/MD_GIS.csv) -->
+<!--    -   Maryland tracts with select characteristics and **select** characteristics of nearest facilities -->
+<!--        - [`MD_GIS_clean.csv`](data/MD_GIS_clean.csv) -->
+<!--    -   Maryland facilities list with **all** characteristics -->
+<!--        - [`Facilities.csv`](data/Facilities.csv) -->
 
 # Favorite Resources
 
 - **Abolition**
-  - [Vera Institute of Justice](https://www.vera.org/)
+  - [Critical Resistance](https://criticalresistance.org/)
   - [Prison Policy Initiative](https://www.prisonpolicy.org/)
+  - [The Marshall Project](https://www.themarshallproject.org/)
   - [The Sentencing Project](https://www.sentencingproject.org/)
-  - [Prison Gerrymandering Project](https://www.prisonersofthecensus.org/)
+  - [Vera Institute of Justice](https://www.vera.org/)
 - **Immigration**
-  - [The Refugee and Immigrant Center for Education and Legal Services (RAICES)](https://www.raicestexas.org/)
   - [Detention Watch Network](https://www.detentionwatchnetwork.org/)
   - [Freedom for Immigrants](https://www.freedomforimmigrants.org/)
   - [Human Rights Watch](https://www.hrw.org/)
+  - [Refugee and Immigrant Center for Education and Legal Services (RAICES)](https://www.raicestexas.org/)
 - **Mental Health**
-  - [Icarus Project](https://ibpf.org/resource/the-icarus-project/) / [Icarus Project NYC](http://nycicarus.org/)
   - [Fireweed Collective](https://fireweedcollective.org/)
+  - [Icarus Project](https://ibpf.org/resource/the-icarus-project/) / [Icarus Project NYC](http://nycicarus.org/)
   - [Substance Abuse and Mental Health Services Administration (SAMHSA)](https://www.samhsa.gov/data/)
