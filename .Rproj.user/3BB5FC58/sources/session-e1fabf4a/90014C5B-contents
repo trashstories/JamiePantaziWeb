@@ -27,7 +27,7 @@ format:
 <br>
 
 <div style="float:left; margin-right: 10px;">
-  [![](figures/mapcropped.png){width=200 fig-alt=""}](Bail_Impact.html)
+  [![](figures/mapcropped.png){width=200 fig-alt="ENTER ALT TEXT!"}](Bail_Impact.html)
 </div>
 
 <div style="font-size:23px">
@@ -36,7 +36,7 @@ format:
 
 </div>
 
-<br><br>
+<br><br><br>
 
 <div style="float:left; margin-right: 10px;">
   [![](figures/ImpactTheroy2.png){width=200 fig-alt="A diagram of bail reform influencing length of detention, reduced plea deas, and increased equality in the justice system."}](bail.html)
@@ -61,7 +61,7 @@ format:
 
 </div>
 
-<br>
+<br><br>
 
 <div style="float:left; margin-right: 10px;">
   [![](figures/prisons.png){width=200 fig-alt="A map of Georgia showing the capacity and location of prisons, color coded to indicate type of facility."}](prisontowns.html)
