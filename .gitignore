@@ -1,8 +1,8 @@
-
-.quarto*
-
-
-*.json
-.Rproj.user/3BB5FC58/jobs/8D147F9E-output.json
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
 
 /.quarto/
+/_site/
+/_freeze/

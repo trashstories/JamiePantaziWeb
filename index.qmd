@@ -168,16 +168,6 @@ Welcome to my portfolio of research and graphic design. My research goals have b
 
 [![Click to view full report.](abolition/figures/mhf_dashboard.png){fig-alt=""}](abolition/prisons_mhf.html)
 
-<!-- # Original Datasets -->
-
-<!-- -  [Prisoners of a Broken System](abolition/prisons_mhf.html)  -->
-<!--    -   Maryland tracts with select characteristics and **all** characteristics of nearest facilities -->
-<!--        - [`MD_GIS.csv`](data/MD_GIS.csv) -->
-<!--    -   Maryland tracts with select characteristics and **select** characteristics of nearest facilities -->
-<!--        - [`MD_GIS_clean.csv`](data/MD_GIS_clean.csv) -->
-<!--    -   Maryland facilities list with **all** characteristics -->
-<!--        - [`Facilities.csv`](data/Facilities.csv) -->
-
 # Favorite Resources
 
 - **Abolition**
